@@ -1,0 +1,92 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: luasrc/view/netports/status_table.htm:196
+#: luasrc/view/netports/status_table.htm:203
+msgid "%.2mB<br />(%d %s)"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:170
+msgid "Bridge member"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:274
+msgid "Collecting data..."
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:107
+msgid "Connected"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:123
+msgid "Disabled"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:120
+msgid "Disconnected"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:134
+msgid "Firewall zone"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:115
+msgid "Full-duplex"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:117
+msgid "Half-duplex"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:223
+msgid "Hide additional information"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:132
+msgid "Link status"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:190
+msgid "MAC address"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:112
+msgid "Mbit/s"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:161
+msgid "Network interface"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:196
+#: luasrc/view/netports/status_table.htm:203
+msgid "Pkts."
+msgstr ""
+
+#: luasrc/view/admin_status/index/netports.htm:7
+msgid "Ports status"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:194
+msgid "RX"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:222
+msgid "Show additional information"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:201
+msgid "TX"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:210
+msgid "There is no available information"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:154
+msgid "none"
+msgstr ""
+
+#: luasrc/view/netports/status_table.htm:180
+msgid "port&nbsp;%d"
+msgstr ""

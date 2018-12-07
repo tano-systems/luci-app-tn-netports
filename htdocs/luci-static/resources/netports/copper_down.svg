@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22.778mm" height="17.705mm" version="1.0" viewBox="0 0 64.568441 50.186607" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<metadata>
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:title/>
+</cc:Work>
+</rdf:RDF>
+</metadata>
+<defs>
+<filter id="b" color-interpolation-filters="sRGB">
+<feColorMatrix result="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
+<feColorMatrix in="fbSourceGraphic" result="fbSourceGraphicAlpha" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"/>
+<feColorMatrix in="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
+</filter>
+<filter id="a" color-interpolation-filters="sRGB">
+<feColorMatrix result="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
+<feColorMatrix in="fbSourceGraphic" result="fbSourceGraphicAlpha" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"/>
+<feColorMatrix in="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
+</filter>
+</defs>
+<g transform="matrix(8.4042 0 0 8.4042 -359.56 -328.92)" stroke-linecap="square">
+<rect x="42.895" y="39.25" width="7.4597" height="5.7485" ry=".34225" fill="#f9f9f9" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width=".2231" style="paint-order:normal"/>
+<path transform="matrix(.063542 0 0 .059843 39.085 35.231)" d="m73.958 75.66h89.41c2.3083 0 4.1667 1.8583 4.1667 4.1667l2.8e-4 52.653h-21.742v9.414h-8.694l4e-5 12.586h-36.871l-4e-5 -12.586h-8.694v-9.414h-21.742l-3.4e-4 -52.653c-1.1e-5 -2.3083 1.8583-4.1667 4.1667-4.1667z" fill="#ccc" filter="url(#a)" stroke="#ccc" stroke-width="2.5"/>
+<g transform="matrix(.063426 0 0 .063426 39.075 35.287)" fill="#fff" filter="url(#b)" stroke="#fff">
+<path d="m80.556 75.747h3.9062v22.786h-3.9062z"/>
+<path d="m153.6 75.747h3.9062v22.786h-3.9062z"/>
+<path d="m132.73 75.747h3.9062v22.786h-3.9062z"/>
+<path d="m122.3 75.747h3.9062v22.786h-3.9062z"/>
+<path d="m111.86 75.747h3.9062v22.786h-3.9062z"/>
+<path d="m101.43 75.747h3.9062v22.786h-3.9062z"/>
+<path d="m90.991 75.747h3.9062v22.786h-3.9062z"/>
+<path d="m143.17 75.747h3.9062v22.786h-3.9062z"/>
+</g>
+<rect x="43.513" y="43.669" width=".9697" height=".8374" ry=".065544" fill="#e6e6e6" stroke="#e6e6e6" stroke-linecap="round" stroke-width=".13386" style="paint-order:normal"/>
+</g>
+</svg>

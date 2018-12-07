@@ -1,0 +1,268 @@
+<%#
+ Copyright (c) 2018, Tano Systems. All Rights Reserved.
+ Anton Kikin <a.kikin@tano-systems.com>
+-%>
+
+<%
+	local uci = require("luci.model.uci").cursor()
+
+	local first_col_width = 25
+
+	local hide_additional_info =
+		uci:get_bool("luci_netports", "global", "hide_additional_info")
+%>
+
+<script type="text/javascript">//<![CDATA[
+
+	var np_data_recent = null
+
+	function elm(id)
+	{
+		return document.getElementById(id)
+	}
+
+	function np_table_header(tbl, data)
+	{
+		var p
+		var len = data.length
+
+		if (!np_data_recent || (len != np_data_recent.length))
+		{
+			var inner = ''
+			var col_width
+
+			inner += '<div class="tr table-titles">'
+			inner += '<div class="th top left" style="width: <%=first_col_width%>%"></div>'
+
+			col_width = (100 - <%=first_col_width%>) / len
+
+			for (p = 0; p < len; p++)
+			{
+				inner += '<div id="np-status-table-header-' + p +
+					'" class="th top left" style="width: ' + col_width + '%">'
+
+				inner += data[p].name
+				inner += '</div>'
+			}
+
+			inner += '</div>'
+			tbl.innerHTML = inner;
+		}
+		else
+		{
+			for (p = 0; p < len; p++)
+			{
+				var header = elm('np-status-table-header-' + p)
+				header.innerHTML = data[p].name
+			}
+		}
+	}
+
+	function np_table_row(title, data, func)
+	{
+		var row = []
+
+		row.push(title)
+		data.forEach(function(p) { row.push(func(p)) })
+
+		return row
+	}
+
+	function np_fmt_status(p)
+	{
+		var status = '';
+		var phyup = 0;
+		var operup = 0;
+
+		// Link icon
+		status += '<img width="40px" src="<%=resource%>/netports/'
+
+		phyup  = parseInt(p.carrier)
+		operup = 1 /* TODO: detect oper state */
+
+		if (operup)
+		{
+			if (phyup)
+				status += p.type + '_up.svg'
+			else
+				status += p.type + '_down.svg'
+		}
+		else
+			status += p.type + '_disabled.svg'
+
+		status += '" /><br />'
+
+		if (operup)
+		{
+			if (phyup)
+			{
+				status += '<%:Connected%>'
+
+				var speed = parseInt(p.speed)
+
+				if (speed > 0)
+					status += '<br />' + speed + '&nbsp;<%:Mbit/s%>'
+
+				if (p.duplex === "full")
+					status += '<br /><%:Full-duplex%>'
+				else if (p.duplex === "half")
+					status += '<br /><%:Half-duplex%>'
+			}
+			else
+				status += '<span style="color: #bbbbbb"><%:Disconnected%></span>'
+		}
+		else
+			status += '<span style="color: #bbbbbb"><%:Disabled%></span>'
+
+		return status;
+	}
+
+	function np_table_rows(tbl, data, short_mode)
+	{
+		var rows = []
+
+		rows.push(np_table_row("<%:Link status%>", data, np_fmt_status))
+
+		rows.push(np_table_row("<%:Firewall zone%>", data, function(p) {
+			var z = ''
+
+			z += '<div class="ifacebox" style="' +
+					'padding: 0;' +
+					'margin: 0;' +
+				'">'
+
+			z += '<div class="ifacebox-head" style="' +
+					'padding-right: 8px;' +
+					'padding-left: 8px;' +
+					'text-align: center;' +
+					'background-color: ' + p.ntm.fwzone_color + ';' +
+				'">'
+
+			z += p.ntm.fwzone
+				? '<strong><a href="/cgi-bin/luci/admin/network/firewall/zones/'
+					+ p.ntm.fwzone_sid
+					+ '" style="color: inherit">'
+					+ p.ntm.fwzone + '</a></strong>'
+				: '<em><%:none%></em>'
+
+			z += '</div></div>'
+
+			return z
+		}))
+
+		rows.push(np_table_row("<%:Network interface%>", data, function(p) {
+			var v = p.ifname
+			if (!p.bridge && p.ntm && p.ntm.netname)
+				v += ' (<a href="/cgi-bin/luci/admin/network/network/'
+					+ p.ntm.netname + '">'
+					+ p.ntm.netname.toUpperCase() + '</a>)'
+			return v
+		}))
+
+		rows.push(np_table_row("<%:Bridge member%>", data, function(p) {
+			if (p.bridge)
+			{
+				var v = p.bridge.ifname
+
+				if (p.ntm && p.ntm.netname)
+					v += ' (<a href="/cgi-bin/luci/admin/network/network/'
+						+ p.ntm.netname + '">'
+						+ p.ntm.netname.toUpperCase() + '</a>)'
+
+				v += ', ' + _('port&nbsp;%d').format(p.bridge.port)
+
+				return v
+			}
+			else
+				return '&ndash;'
+		}))
+
+		if (!short_mode)
+		{
+			rows.push(np_table_row("<%:MAC address%>", data, function(p) {
+				return p.hwaddr ? p.hwaddr.toUpperCase() : '&nbsp;'
+			}))
+
+			rows.push(np_table_row("<%:RX%>", data, function(p) {
+				if (p.stats.rx_bytes)
+					return _('%.2mB<br />(%d %s)').format(p.stats.rx_bytes, p.stats.rx_packets, _('Pkts.'))
+				else
+					return '&ndash;'
+			}))
+
+			rows.push(np_table_row("<%:TX%>", data, function(p) {
+				if (p.stats.tx_bytes)
+					return _('%.2mB<br />(%d %s)').format(p.stats.tx_bytes, p.stats.tx_packets, _('Pkts.'))
+				else
+					return '&ndash;'
+			}))
+		}
+
+		cbi_update_table(tbl, rows,
+			'<%:There is no available information%>');
+	}
+
+	function np_data_update(data)
+	{
+		var short_mode = true
+
+		var btn_np_toggle_additional_info =
+			elm('btn-np-toggle-additional-info');
+
+		short_mode = (btn_np_toggle_additional_info.getAttribute('data-short') === "true");
+		btn_np_toggle_additional_info.setAttribute('value', short_mode
+			? '<%:Show additional information%>'
+			: '<%:Hide additional information%>')
+
+		btn_np_toggle_additional_info.removeAttribute('disabled', true);
+
+		var tbl = elm('np-status-table')
+
+		np_table_header(tbl, data)
+		np_table_rows(tbl, data, short_mode)
+	}
+
+	function np_toggle_additional_info(btn)
+	{
+		var additional = (btn.getAttribute('data-short') === 'false');
+
+		btn.setAttribute('data-short', additional)
+		btn.setAttribute('disabled', true)
+		btn.blur()
+
+		if (np_data_recent)
+			np_data_update(np_data_recent)
+	}
+
+	// Start polling data every 5 seconds
+	XHR.poll(5, '<%=url([[admin]], [[network]], [[netports_info]])%>', null,
+		function(x, data) {
+			np_data_update(data)
+			np_data_recent = data;
+		}
+	);
+
+//]]></script>
+
+<fieldset class="cbi-section">
+	<input class="cbi-button cbi-button-apply"
+		id="btn-np-toggle-additional-info"
+		<% if hide_additional_info == true then %>
+			data-short="true"
+		<% else %>
+			data-short="false"
+		<% end %>
+		type="button"
+		value="..."
+		disabled="true"
+		onclick="np_toggle_additional_info(this)" />
+</fieldset>
+
+<div class="table" id="np-status-table">
+	<div class="tr table-titles">
+		<div class="th top center">...</div>
+	</div>
+	<div class="tr placeholder">
+		<div class="td"><em><%:Collecting data...%></em></div>
+	</div>
+</div>

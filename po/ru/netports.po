@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2018-12-07 21:44+0300\n"
+"Last-Translator: Anton Kikin <a.kikin@tano-systems.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"X-Generator: Poedit 2.2\n"
+
+#: luasrc/view/netports/status_table.htm:196
+#: luasrc/view/netports/status_table.htm:203
+msgid "%.2mB<br />(%d %s)"
+msgstr "%.2mБ<br />(%d %s)"
+
+#: luasrc/view/netports/status_table.htm:170
+msgid "Bridge member"
+msgstr "В составе моста"
+
+#: luasrc/view/netports/status_table.htm:274
+msgid "Collecting data..."
+msgstr "Сбор данных..."
+
+#: luasrc/view/netports/status_table.htm:107
+msgid "Connected"
+msgstr "Подключено"
+
+#: luasrc/view/netports/status_table.htm:123
+msgid "Disabled"
+msgstr "Отключено"
+
+#: luasrc/view/netports/status_table.htm:120
+msgid "Disconnected"
+msgstr "Не подключено"
+
+#: luasrc/view/netports/status_table.htm:134
+msgid "Firewall zone"
+msgstr "Зона межсетевого экрана"
+
+#: luasrc/view/netports/status_table.htm:115
+msgid "Full-duplex"
+msgstr "Полный-дуплекс"
+
+#: luasrc/view/netports/status_table.htm:117
+msgid "Half-duplex"
+msgstr "Полу-дуплекс"
+
+#: luasrc/view/netports/status_table.htm:223
+msgid "Hide additional information"
+msgstr "Скрыть дополнительную информацию"
+
+#: luasrc/view/netports/status_table.htm:132
+msgid "Link status"
+msgstr "Состояние подключения"
+
+#: luasrc/view/netports/status_table.htm:190
+msgid "MAC address"
+msgstr "MAC адрес"
+
+#: luasrc/view/netports/status_table.htm:112
+msgid "Mbit/s"
+msgstr "Мбит/с"
+
+#: luasrc/view/netports/status_table.htm:161
+msgid "Network interface"
+msgstr "Сетевой интерфейс"
+
+#: luasrc/view/netports/status_table.htm:196
+#: luasrc/view/netports/status_table.htm:203
+msgid "Pkts."
+msgstr "пакетов"
+
+#: luasrc/view/admin_status/index/netports.htm:7
+msgid "Ports status"
+msgstr "Состояние портов"
+
+#: luasrc/view/netports/status_table.htm:194
+msgid "RX"
+msgstr "Получение (RX)"
+
+#: luasrc/view/netports/status_table.htm:222
+msgid "Show additional information"
+msgstr "Показать дополнительную информацию"
+
+#: luasrc/view/netports/status_table.htm:201
+msgid "TX"
+msgstr "Передача (TX)"
+
+#: luasrc/view/netports/status_table.htm:210
+msgid "There is no available information"
+msgstr "Информация не доступна"
+
+#: luasrc/view/netports/status_table.htm:154
+msgid "none"
+msgstr "нет"
+
+#: luasrc/view/netports/status_table.htm:180
+msgid "port&nbsp;%d"
+msgstr "порт&nbsp;%d"
