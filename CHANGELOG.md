@@ -17,6 +17,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 ### Changed
 - Renamed application section title from "Ports Status" to "Network Interfaces
   Ports Status"
+- Icons moved to `icons` subdirectory.
 
 ## 1.0.0 - 07.12.2018
 
