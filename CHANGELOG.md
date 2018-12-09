@@ -13,6 +13,10 @@ All dates in this document are in `DD.MM.YYYY` format.
   interface and the bridge of which the interface is a member. In this case,
   information about both firewall zones is displayed.
 
+### Changed
+- Renamed application section title from "Ports Status" to "Network Interfaces
+  Ports Status"
+
 ## 1.0.0 - 07.12.2018
 
 Initial release

@@ -3,7 +3,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2018-12-08 04:08+0300\n"
+"PO-Revision-Date: 2018-12-09 20:00+0300\n"
 "Last-Translator: Anton Kikin <a.kikin@tano-systems.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -74,8 +74,8 @@ msgid "Pkts."
 msgstr "пакетов"
 
 #: luasrc/view/admin_status/index/netports.htm:7
-msgid "Ports status"
-msgstr "Состояние портов"
+msgid "Network Interfaces Ports Status"
+msgstr "Состояние портов сетевых интерфейсов"
 
 #: luasrc/view/netports/status_table.htm:194
 msgid "RX"

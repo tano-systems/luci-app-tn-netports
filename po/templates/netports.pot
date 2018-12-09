@@ -64,7 +64,7 @@ msgid "Pkts."
 msgstr ""
 
 #: luasrc/view/admin_status/index/netports.htm:7
-msgid "Ports status"
+msgid "Network Interfaces Ports Status"
 msgstr ""
 
 #: luasrc/view/netports/status_table.htm:194
