@@ -12,6 +12,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Handling cases when the firewall zones are assigned to both the network
   interface and the bridge of which the interface is a member. In this case,
   information about both firewall zones is displayed.
+- Hide additional information toggle button before first data is arrived.
 
 ### Changed
 - Renamed application section title from "Ports Status" to "Network Interfaces

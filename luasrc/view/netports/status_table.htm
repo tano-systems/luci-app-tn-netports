@@ -233,6 +233,7 @@
 			: '<%:Hide additional information%>')
 
 		btn_np_toggle_additional_info.removeAttribute('disabled', true);
+		btn_np_toggle_additional_info.style.display = "block"
 
 		var tbl = elm('np-status-table')
 
@@ -270,6 +271,7 @@
 		<% else %>
 			data-short="false"
 		<% end %>
+		style="display: none"
 		type="button"
 		value="..."
 		disabled="true"
