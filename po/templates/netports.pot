@@ -27,7 +27,7 @@ msgid "Disconnected"
 msgstr ""
 
 #: luasrc/view/netports/status_table.htm:134
-msgid "Firewall zone"
+msgid "Firewall zones"
 msgstr ""
 
 #: luasrc/view/netports/status_table.htm:115

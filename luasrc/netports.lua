@@ -88,10 +88,6 @@ function ports()
 	for _, net in ipairs(ntm:get_networks()) do
 		local ifaces = { net:get_interface() }
 
-		for k, v in ipairs(net:get_interfaces() or {}) do
-			table.insert(ifaces, v)
-		end
-
 		netlist[#netlist + 1] = {
 			name   = net:name(),
 			fwzone = fwm:get_zone_by_network(net:name()),
@@ -150,6 +146,11 @@ function ports()
 
 			-- Parameters for/from netifd
 			new_port["ntm"] = get_ntm_info(netlist, ifname)
+
+			if new_port["bridge"] then
+				new_port["ntm_bridge"] = get_ntm_info(
+					netlist, new_port["bridge"].ifname)
+			end
 
 			ports[#ports + 1] = new_port
 		end)
