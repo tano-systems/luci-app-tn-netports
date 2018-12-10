@@ -72,13 +72,18 @@
 	{
 		var status = '';
 		var phyup = 0;
-		var operup = 0;
+		var operup = 1;
 
 		// Link icon
 		status += '<img width="40px" src="<%=resource%>/netports/icons/'
 
 		phyup  = parseInt(p.carrier)
-		operup = 1 /* TODO: detect oper state */
+
+		if (p.operstate === "down")
+		{
+			if (p.type !== "usb")
+				operup = 0
+		}
 
 		if (operup)
 		{

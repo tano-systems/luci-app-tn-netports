@@ -13,6 +13,8 @@ All dates in this document are in `DD.MM.YYYY` format.
   interface and the bridge of which the interface is a member. In this case,
   information about both firewall zones is displayed.
 - Hide additional information toggle button before first data is arrived.
+- Handling of the operative interface state from `/sys/class/net/<if>/operstate`
+  sysfs file.
 
 ### Changed
 - Renamed application section title from "Ports Status" to "Network Interfaces
