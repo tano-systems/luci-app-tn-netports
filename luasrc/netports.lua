@@ -81,9 +81,10 @@ function ports()
 	local ports = {}
 	local netlist = {}
 
-	local uci = require("luci.model.uci").cursor()
-	local ntm = require("luci.model.network").init()
-	local fwm = require("luci.model.firewall").init()
+	local util = require("luci.util")
+	local uci  = require("luci.model.uci").cursor()
+	local ntm  = require("luci.model.network").init()
+	local fwm  = require("luci.model.firewall").init()
 
 	for _, net in ipairs(ntm:get_networks()) do
 		local ifaces = { net:get_interface() }
@@ -111,10 +112,14 @@ function ports()
 			local ifname = section["ifname"]
 			local type   = section["type"]
 
-			if type ~= "copper" and
-			   type ~= "fixed" and
-			   type ~= "usb" and
-			   type ~= "wifi" then
+			local knowntypes = {
+				"copper",
+				"fixed",
+				"usb",
+				"wifi"
+			}
+
+			if not util.contains(knowntypes, type) then
 				type = "copper"
 			end
 
