@@ -3,7 +3,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2018-12-10 02:50+0300\n"
+"PO-Revision-Date: 2018-12-10 06:42+0300\n"
 "Last-Translator: Anton Kikin <a.kikin@tano-systems.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -11,92 +11,110 @@ msgstr ""
 "Language: ru\n"
 "X-Generator: Poedit 2.2\n"
 
-#: luasrc/view/netports/status_table.htm:220
-#: luasrc/view/netports/status_table.htm:227
-msgid "%.2mB<br />(%d %s)"
-msgstr "%.2mБ<br />(%d %s)"
+#: htdocs/luci-static/resources/netports/netports.js:172
+#: htdocs/luci-static/resources/netports/netports.js:183
+msgid "%.2mB<br />(%d&#160;%s)"
+msgstr "%.2mБ<br />(%d&#160;%s)"
 
-#: luasrc/view/netports/status_table.htm:194
+#: luasrc/view/netports/status_table.htm:107
+#: luasrc/view/netports/status_table.htm:136
 msgid "Bridge member"
 msgstr "В составе моста"
 
-#: luasrc/view/netports/status_table.htm:300
+#: luasrc/view/netports/status_table.htm:45
 msgid "Collecting data..."
 msgstr "Сбор данных..."
 
-#: luasrc/view/netports/status_table.htm:113
+#: htdocs/luci-static/resources/netports/netports.js:63
 msgid "Connected&#8201;"
 msgstr "Подключено"
 
-#: luasrc/view/netports/status_table.htm:129
+#: htdocs/luci-static/resources/netports/netports.js:76
 msgid "Disabled&#8201;"
 msgstr "Отключено"
 
-#: luasrc/view/netports/status_table.htm:126
+#: htdocs/luci-static/resources/netports/netports.js:72
 msgid "Disconnected&#8201;"
 msgstr "Не подключено"
 
-#: luasrc/view/netports/status_table.htm:140
+#: luasrc/view/netports/status_table.htm:108
+#: luasrc/view/netports/status_table.htm:134
 msgid "Firewall zones"
 msgstr "Зоны межсетевого экрана"
 
-#: luasrc/view/netports/status_table.htm:121
-msgid "Full-duplex"
-msgstr "Полный дуплекс"
-
-#: luasrc/view/netports/status_table.htm:123
-msgid "Half-duplex"
-msgstr "Полу-дуплекс"
-
-#: luasrc/view/netports/status_table.htm:247
+#: luasrc/view/netports/status_table.htm:214
 msgid "Hide additional information"
 msgstr "Скрыть дополнительную информацию"
 
-#: luasrc/view/netports/status_table.htm:138
+#: luasrc/view/netports/status_table.htm:106
+#: luasrc/view/netports/status_table.htm:135
+msgid "Interface"
+msgstr "Интерфейс"
+
+#: luasrc/view/netports/status_table.htm:105
+#: luasrc/view/netports/status_table.htm:133
 msgid "Link status"
 msgstr "Состояние подключения"
 
-#: luasrc/view/netports/status_table.htm:214
+#: luasrc/view/netports/status_table.htm:142
 msgid "MAC address"
 msgstr "MAC адрес"
 
-#: luasrc/view/netports/status_table.htm:118
+#: htdocs/luci-static/resources/netports/netports.js:61
 msgid "Mbit/s"
 msgstr "Мбит/с"
 
-#: luasrc/view/admin_status/index/[after@memory]-netports.htm:7
+#: luasrc/view/netports/status_table.htm:104
+msgid "Name and MAC-address"
+msgstr "Имя и MAC-адрес"
+
+#: luasrc/view/admin_status/index/25-netports.htm:7
 msgid "Network Interfaces Ports Status"
 msgstr "Состояние портов сетевых интерфейсов"
 
-#: luasrc/view/netports/status_table.htm:185
-msgid "Network interface"
-msgstr "Сетевой интерфейс"
-
-#: luasrc/view/netports/status_table.htm:220
-#: luasrc/view/netports/status_table.htm:227
+#: htdocs/luci-static/resources/netports/netports.js:173
+#: htdocs/luci-static/resources/netports/netports.js:184
 msgid "Pkts."
 msgstr "пакетов"
 
-#: luasrc/view/netports/status_table.htm:218
+#: luasrc/view/netports/status_table.htm:109
+#: luasrc/view/netports/status_table.htm:140
 msgid "RX"
 msgstr "Получение (RX)"
 
-#: luasrc/view/netports/status_table.htm:246
+#: luasrc/view/netports/status_table.htm:213
 msgid "Show additional information"
 msgstr "Показать дополнительную информацию"
 
-#: luasrc/view/netports/status_table.htm:225
+#: luasrc/view/netports/status_table.htm:207
+msgid "Switch to horizontal mode"
+msgstr "Переключить в горизонтальный режим"
+
+#: luasrc/view/netports/status_table.htm:206
+msgid "Switch to vertical mode"
+msgstr "Переключить в вертикальный режим"
+
+#: luasrc/view/netports/status_table.htm:110
+#: luasrc/view/netports/status_table.htm:141
 msgid "TX"
 msgstr "Передача (TX)"
 
-#: luasrc/view/netports/status_table.htm:234
+#: luasrc/view/netports/status_table.htm:163
 msgid "There is no available information"
 msgstr "Информация не доступна"
 
-#: luasrc/view/netports/status_table.htm:177
+#: htdocs/luci-static/resources/netports/netports.js:66
+msgid "full-duplex"
+msgstr "полный дуплекс"
+
+#: htdocs/luci-static/resources/netports/netports.js:68
+msgid "half-duplex"
+msgstr "полу-дуплекс"
+
+#: htdocs/luci-static/resources/netports/netports.js:126
 msgid "none"
 msgstr "нет"
 
-#: luasrc/view/netports/status_table.htm:204
+#: htdocs/luci-static/resources/netports/netports.js:155
 msgid "port&nbsp;%d"
 msgstr "порт&nbsp;%d"

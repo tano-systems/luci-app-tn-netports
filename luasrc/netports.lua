@@ -98,7 +98,8 @@ function ports()
 
 	uci:foreach("luci_netports", "port",
 		function(section)
-			if section["disable"] and tonumber(section["disable"]) == 1 then
+			if section["disable"] and (section["disable"] == "true"
+				or tonumber(section["disable"]) == 1) then
 				-- Disabled in config
 				return true
 			end
