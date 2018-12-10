@@ -101,7 +101,15 @@
 		{
 			if (phyup)
 			{
-				status += '<%:Connected%>'
+				/*
+				 * &#8201; is a thin space HTML entity code (&thinsp).
+				 *
+				 * I use this in the translatable strings because the strings
+				 * "Connected", "Disconnected" and "Disabled" have incorrect
+				 * translations in luci-base module and overlaps the translations
+				 * from this application.
+				 */
+				status += '<%=translate("Connected&#8201;")%>'
 
 				var speed = parseInt(p.speed)
 
@@ -114,10 +122,10 @@
 					status += '<br /><%:Half-duplex%>'
 			}
 			else
-				status += '<span style="color: #bbbbbb"><%:Disconnected%></span>'
+				status += '<span style="color: #bbbbbb"><%=translate("Disconnected&#8201;")%></span>'
 		}
 		else
-			status += '<span style="color: #bbbbbb"><%:Disabled%></span>'
+			status += '<span style="color: #bbbbbb"><%=translate("Disabled&#8201;")%></span>'
 
 		return status;
 	}

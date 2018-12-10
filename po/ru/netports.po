@@ -3,7 +3,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2018-12-09 20:00+0300\n"
+"PO-Revision-Date: 2018-12-10 02:50+0300\n"
 "Last-Translator: Anton Kikin <a.kikin@tano-systems.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -11,92 +11,92 @@ msgstr ""
 "Language: ru\n"
 "X-Generator: Poedit 2.2\n"
 
-#: luasrc/view/netports/status_table.htm:196
-#: luasrc/view/netports/status_table.htm:203
+#: luasrc/view/netports/status_table.htm:220
+#: luasrc/view/netports/status_table.htm:227
 msgid "%.2mB<br />(%d %s)"
 msgstr "%.2mБ<br />(%d %s)"
 
-#: luasrc/view/netports/status_table.htm:170
+#: luasrc/view/netports/status_table.htm:194
 msgid "Bridge member"
 msgstr "В составе моста"
 
-#: luasrc/view/netports/status_table.htm:274
+#: luasrc/view/netports/status_table.htm:300
 msgid "Collecting data..."
 msgstr "Сбор данных..."
 
-#: luasrc/view/netports/status_table.htm:107
-msgid "Connected"
+#: luasrc/view/netports/status_table.htm:113
+msgid "Connected&#8201;"
 msgstr "Подключено"
 
-#: luasrc/view/netports/status_table.htm:123
-msgid "Disabled"
+#: luasrc/view/netports/status_table.htm:129
+msgid "Disabled&#8201;"
 msgstr "Отключено"
 
-#: luasrc/view/netports/status_table.htm:120
-msgid "Disconnected"
+#: luasrc/view/netports/status_table.htm:126
+msgid "Disconnected&#8201;"
 msgstr "Не подключено"
 
-#: luasrc/view/netports/status_table.htm:134
+#: luasrc/view/netports/status_table.htm:140
 msgid "Firewall zones"
 msgstr "Зоны межсетевого экрана"
 
-#: luasrc/view/netports/status_table.htm:115
+#: luasrc/view/netports/status_table.htm:121
 msgid "Full-duplex"
-msgstr "Полный-дуплекс"
+msgstr "Полный дуплекс"
 
-#: luasrc/view/netports/status_table.htm:117
+#: luasrc/view/netports/status_table.htm:123
 msgid "Half-duplex"
 msgstr "Полу-дуплекс"
 
-#: luasrc/view/netports/status_table.htm:223
+#: luasrc/view/netports/status_table.htm:247
 msgid "Hide additional information"
 msgstr "Скрыть дополнительную информацию"
 
-#: luasrc/view/netports/status_table.htm:132
+#: luasrc/view/netports/status_table.htm:138
 msgid "Link status"
 msgstr "Состояние подключения"
 
-#: luasrc/view/netports/status_table.htm:190
+#: luasrc/view/netports/status_table.htm:214
 msgid "MAC address"
 msgstr "MAC адрес"
 
-#: luasrc/view/netports/status_table.htm:112
+#: luasrc/view/netports/status_table.htm:118
 msgid "Mbit/s"
 msgstr "Мбит/с"
 
-#: luasrc/view/netports/status_table.htm:161
-msgid "Network interface"
-msgstr "Сетевой интерфейс"
-
-#: luasrc/view/netports/status_table.htm:196
-#: luasrc/view/netports/status_table.htm:203
-msgid "Pkts."
-msgstr "пакетов"
-
-#: luasrc/view/admin_status/index/netports.htm:7
+#: luasrc/view/admin_status/index/[after@memory]-netports.htm:7
 msgid "Network Interfaces Ports Status"
 msgstr "Состояние портов сетевых интерфейсов"
 
-#: luasrc/view/netports/status_table.htm:194
+#: luasrc/view/netports/status_table.htm:185
+msgid "Network interface"
+msgstr "Сетевой интерфейс"
+
+#: luasrc/view/netports/status_table.htm:220
+#: luasrc/view/netports/status_table.htm:227
+msgid "Pkts."
+msgstr "пакетов"
+
+#: luasrc/view/netports/status_table.htm:218
 msgid "RX"
 msgstr "Получение (RX)"
 
-#: luasrc/view/netports/status_table.htm:222
+#: luasrc/view/netports/status_table.htm:246
 msgid "Show additional information"
 msgstr "Показать дополнительную информацию"
 
-#: luasrc/view/netports/status_table.htm:201
+#: luasrc/view/netports/status_table.htm:225
 msgid "TX"
 msgstr "Передача (TX)"
 
-#: luasrc/view/netports/status_table.htm:210
+#: luasrc/view/netports/status_table.htm:234
 msgid "There is no available information"
 msgstr "Информация не доступна"
 
-#: luasrc/view/netports/status_table.htm:154
+#: luasrc/view/netports/status_table.htm:177
 msgid "none"
 msgstr "нет"
 
-#: luasrc/view/netports/status_table.htm:180
+#: luasrc/view/netports/status_table.htm:204
 msgid "port&nbsp;%d"
 msgstr "порт&nbsp;%d"

@@ -24,6 +24,9 @@ All dates in this document are in `DD.MM.YYYY` format.
   This became possible after applying patch to LuCI from pull request
   [2359](https://github.com/openwrt/luci/pull/2359).
 
+### Fixed
+- Fix Russian translations for "Connected", "Disconnected" and "Disabled".
+
 ## 1.0.0 - 07.12.2018
 
 Initial release
