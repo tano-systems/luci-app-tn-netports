@@ -20,6 +20,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Added "Switch to vertical/horizontal mode" button. By default this button
   is disabled (not shown). Button may be enabled by the `global.hv_mode_switch_button`
   option in `/etc/config/luci_netports` configuration file.
+- Added example screenshots.
 
 ### Changed
 - Renamed application section title from "Ports Status" to "Network Interfaces Ports Status"
