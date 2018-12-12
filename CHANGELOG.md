@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 All dates in this document are in `DD.MM.YYYY` format.
 
-## Unreleased
+## [Unreleased]
 ### Added
 - This CHANGELOG file.
 - Handling cases when the firewall zones are assigned to both the network
@@ -37,6 +37,9 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Properly handling of the operative interface state from
   `/sys/class/net/<if>/operstate` sysfs file.
 
-## 1.0.0 - 07.12.2018
+## [Version 1.0.0] (07.12.2018)
 
 Initial release
+
+[Unreleased]: https://github.com/tano-systems/luci-app-netports/tree/master
+[Version 1.0.0]: https://github.com/tano-systems/luci-app-netports/releases/tag/v1.0.0
