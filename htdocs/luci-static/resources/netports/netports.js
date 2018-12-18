@@ -5,20 +5,17 @@
 
 function np_fmt_status(p, horizontal)
 {
-	var status = ''
-	var icon   = ''
-	var phyup  = 0
-	var operup = 1
+	var status  = ''
+	var icon    = ''
+	var phyup   = 0
+	var adminup = 0
 
-	phyup  = parseInt(p.carrier)
+	phyup = parseInt(p.carrier)
 
-	if (p.operstate === "down")
-	{
-		if (p.type !== "usb")
-			operup = 0
-	}
+	if (p.adminstate === "up")
+		adminup = 1
 
-	if (operup)
+	if (adminup)
 	{
 		if (phyup)
 			icon = p.type + '_up.svg'
@@ -41,7 +38,7 @@ function np_fmt_status(p, horizontal)
 	
 	status += '<div class="netports-linkstatus-text">'
 
-	if (operup)
+	if (adminup)
 	{
 		if (phyup)
 		{

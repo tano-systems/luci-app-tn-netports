@@ -136,6 +136,14 @@ function ports()
 			-- unknown, notpresent, down, lowerlayerdown, testing, dormant, up
 			new_port["operstate"] = sysfs_net_read(ifname, "operstate")
 
+			-- up or down
+			local flags = sysfs_net_read(ifname, "flags")
+			if tonumber(flags) & 1 == 1 then
+				new_port["adminstate"] = "up"
+			else
+				new_port["adminstate"] = "down"
+			end
+
 			if new_port["carrier"] > 0 then
 				-- full, half
 				new_port["duplex"] = sysfs_net_read(ifname, "duplex")
