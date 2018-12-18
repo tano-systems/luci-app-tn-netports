@@ -34,6 +34,7 @@ All dates in this document are in `DD.MM.YYYY` format.
   to `global.default_additional_info`.
 
 ### Fixed
+- Fix port link status icon display in IE.
 - Fix Russian translations for "Connected", "Disconnected" and "Disabled".
 - Properly handling of the operative interface state from
   `/sys/class/net/<if>/operstate` sysfs file.
