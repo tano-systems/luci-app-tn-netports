@@ -28,19 +28,18 @@ function np_fmt_status(p, horizontal)
 	else
 		icon = p.type + '_disabled.svg'
 
-	if ((typeof horizontal !== 'undefined') && horizontal)
-		status += '<div style="float: left; margin-right: 8px">'
-	else
-		status += '<div>'
+	status += '<div class="netports-linkstatus-icon-container netports-linkstatus-icon-container-%s">'.format(
+		((typeof horizontal !== 'undefined') && horizontal) ? "h" : "v"
+	)
 
 	// Link icon
-	status += '<img width="40px" src="'
+	status += '<img class="netports-linkstatus-icon" src="'
 	status += L.resource('netports/icons/' + icon)
 	status += '" />'
 
 	status += '</div>'
 	
-	status += '<div style="white-space: nowrap;">'
+	status += '<div class="netports-linkstatus-text">'
 
 	if (operup)
 	{
@@ -68,11 +67,11 @@ function np_fmt_status(p, horizontal)
 				status += ',<br />' + _('half-duplex')
 		}
 		else
-			status += '<span style="color: #bbbbbb">' +
+			status += '<span class="netports-linkstatus-text-disconnected">' +
 				_('Disconnected&#8201;') + '</span><br />&#160;'
 	}
 	else
-		status += '<span style="color: #bbbbbb">' +
+		status += '<span class="netports-linkstatus-text-disabled">' +
 			_('Disabled&#8201;') + '</span><br />&#160;'
 
 	status += '</div>'
@@ -97,31 +96,15 @@ function np_fmt_fwzones(p)
 	ntm.forEach(function(n) {
 		var ifname = ''
 
-		z += '<div class="ifacebox" style="' +
-				'display: block; ' + 
-				'padding: 0;' +
-				'margin: 0;' +
-				'min-width: auto;' +
-				'width: fit-content;' + 
-			'">'
-
-		z += '<div class="ifacebox-head" style="' +
-				'padding-right: 8px;' +
-				'padding-left: 8px;' +
-				'text-align: center;' +
-				'min-width: 100px;' +
-				'width: fit-content;' + 
-				'background-color: ' + n.fwzone_color + ';' +
-			'">'
+		z += '<div class="ifacebox netports-ifacebox">'
+		z += '<div class="ifacebox-head netports-ifacebox-head" style="background-color: ' + n.fwzone_color + ';">'
 
 		if (out_ifname)
 			ifname = n.netname.toUpperCase() + ': '
 
 		z += n.fwzone
 			? '<strong>'
-			  + '<a href="/cgi-bin/luci/admin/network/firewall/zones/'
-			  + n.fwzone_sid
-			  + '" style="color: inherit">'
+			  + '<a href="/cgi-bin/luci/admin/network/firewall/zones/' + n.fwzone_sid + '">'
 			  + ifname + n.fwzone + '</a></strong>'
 			: '<em>' + _('none') + '</em>'
 

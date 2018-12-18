@@ -26,6 +26,51 @@
 	end
 %>
 
+<style>
+	.netports-linkstatus-icon-container {
+		width: 42px;
+	}
+	.netports-linkstatus-icon {
+		  display: inline-block;
+		max-width: 100%;
+		    width: 100%;
+		   height: auto;
+	}
+	.netports-linkstatus-icon-container-h {
+		float: left;
+		margin-right: 8px;
+	}
+	.netports-linkstatus-text {
+		white-space: nowrap;
+	}
+	.netports-linkstatus-text-disconnected,
+	.netports-linkstatus-text-disabled {
+		color: #bbbbbb;
+	}
+	.netports-ifacebox,
+	.netports-ifacebox-head {
+		width: auto !important;
+		width: fit-content !important;
+		width: -moz-fit-content !important;
+		width: -webkit-fit-content !important;
+	}
+	.netports-ifacebox {
+		display: block;
+		padding: 0;
+		margin: 0;
+		min-width: auto;
+	}
+	.netports-ifacebox-head {
+		padding-right: 8px;
+		padding-left: 8px;
+		text-align: center;
+		min-width: 100px;
+	}
+	.netports-ifacebox-head a {
+		color: inherit;
+	}
+</style>
+
 <fieldset class="cbi-section">
 	<input class="cbi-button"
 		id="btn-np-switch-hv-mode" style="display: none"
