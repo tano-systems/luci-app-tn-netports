@@ -88,6 +88,9 @@ function np_fmt_fwzones(p)
 	if (p.ntm_bridge && p.ntm_bridge.fwzone)
 		ntm.push(p.ntm_bridge)
 
+	if (ntm.length == 0)
+		return '&ndash;'
+
 	out_ifname = ntm.length > 1
 
 	ntm.forEach(function(n) {

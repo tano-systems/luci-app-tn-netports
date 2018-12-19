@@ -40,6 +40,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Use type `usb_rndis` instead of `usb`.
 
 ### Fixed
+- Output dash if no assigned firewall zones.
 - Fix administrative down state detection.
 - Fix port link status icon display in IE.
 - Fix Russian translations for "Connected", "Disconnected" and "Disabled".
