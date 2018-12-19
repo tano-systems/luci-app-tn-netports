@@ -116,9 +116,22 @@ function ports()
 			local knowntypes = {
 				"copper",
 				"fixed",
-				"usb",
+				"usb", -- deprecated
+				"usb_stick",
+				"usb_rndis",
+				"usb_2g",
+				"usb_3g",
+				"usb_wifi",
 				"wifi"
 			}
+
+			if type == "usb" then
+				type = "usb_rndis"
+			end
+
+			if type == "usb_wifi" or type == "usb_2g" or type == "usb_3g" then
+				type = "usb_stick"
+			end
 
 			if not util.contains(knowntypes, type) then
 				type = "copper"
@@ -128,6 +141,10 @@ function ports()
 			new_port["ifname"] = ifname
 			new_port["type"]   = type
 			new_port["name"]   = section["name"]
+
+			if not new_port["name"] or new_port["name"] == "" then
+				new_port["name"] = ifname
+			end
 
 			-- General port interface parameters
 			new_port["hwaddr"]  = sysfs_net_read(ifname, "address")

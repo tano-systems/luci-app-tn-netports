@@ -21,8 +21,10 @@ All dates in this document are in `DD.MM.YYYY` format.
   is disabled (not shown). Button may be enabled by the `global.hv_mode_switch_button`
   option in `/etc/config/luci_netports` configuration file.
 - Added example screenshots.
+- Added `usb_stick`, `usb_2g`, `usb_3g` and `usb_wifi` new types and icons.
 
 ### Changed
+- Updated README.md file.
 - Renamed application section title from "Ports Status" to "Network Interfaces Ports Status"
 - Icons moved to `icons` subdirectory.
 - Place application on the "Overview" page after "Memory" section.
@@ -32,6 +34,10 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Renamed "Network interface" parameter to "Interface" in the table.
 - Renamed configuration parameter `global.hide_additional_info`
   to `global.default_additional_info`.
+- Renamed old type `usb` to `usb_rndis`. Old type name `usb` is supported but deprecated.
+
+### Deprecated
+- Use type `usb_rndis` instead of `usb`.
 
 ### Fixed
 - Fix administrative down state detection.
