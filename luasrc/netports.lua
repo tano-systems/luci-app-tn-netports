@@ -121,6 +121,7 @@ function ports()
 				"usb_rndis",
 				"usb_2g",
 				"usb_3g",
+				"usb_4g",
 				"usb_wifi",
 				"wifi"
 			}
@@ -129,7 +130,10 @@ function ports()
 				type = "usb_rndis"
 			end
 
-			if type == "usb_wifi" or type == "usb_2g" or type == "usb_3g" then
+			if type == "usb_wifi" or
+			   type == "usb_2g" or
+			   type == "usb_3g" or
+			   type == "usb_4g" then
 				type = "usb_stick"
 			end
 

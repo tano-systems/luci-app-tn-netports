@@ -21,7 +21,7 @@ All dates in this document are in `DD.MM.YYYY` format.
   is disabled (not shown). Button may be enabled by the `global.hv_mode_switch_button`
   option in `/etc/config/luci_netports` configuration file.
 - Added example screenshots.
-- Added `usb_stick`, `usb_2g`, `usb_3g` and `usb_wifi` new types and icons.
+- Added `usb_stick`, `usb_2g`, `usb_3g`, `usb_4g` and `usb_wifi` new types and icons.
 
 ### Changed
 - Updated README.md file.

@@ -60,7 +60,7 @@ Available port types (`type` setting):
 | `fixed` | ![fixed_disabled](htdocs/luci-static/resources/netports/icons/fixed_disabled.svg?sanitize=true) | ![fixed_down](htdocs/luci-static/resources/netports/icons/fixed_down.svg?sanitize=true) | ![fixed_up](htdocs/luci-static/resources/netports/icons/fixed_up.svg?sanitize=true) | Intercircuit fixed link connection. |
 | `wifi`, `usb_wifi` | ![wifi_disabled](htdocs/luci-static/resources/netports/icons/wifi_disabled.svg?sanitize=true) | ![wifi_down](htdocs/luci-static/resources/netports/icons/wifi_down.svg?sanitize=true) | ![wifi_up](htdocs/luci-static/resources/netports/icons/wifi_up.svg?sanitize=true) | Wireless connection. |
 | `usb_rndis` | ![usb_rndis_disabled](htdocs/luci-static/resources/netports/icons/usb_rndis_disabled.svg?sanitize=true) | ![usb_rndis_down](htdocs/luci-static/resources/netports/icons/usb_rndis_down.svg?sanitize=true) | ![usb_rndis_up](htdocs/luci-static/resources/netports/icons/usb_rndis_up.svg?sanitize=true) | USB RNDIS connection. |
-| `usb_2g`, `usb_3g` | ![usb_stick_disabled](htdocs/luci-static/resources/netports/icons/usb_stick_disabled.svg?sanitize=true) | ![usb_stick_down](htdocs/luci-static/resources/netports/icons/usb_stick_down.svg?sanitize=true) | ![usb_stick_up](htdocs/luci-static/resources/netports/icons/usb_stick_up.svg?sanitize=true) | USB 2G/3G modem connection. |
+| `usb_2g`, `usb_3g`, `usb_4g` | ![usb_stick_disabled](htdocs/luci-static/resources/netports/icons/usb_stick_disabled.svg?sanitize=true) | ![usb_stick_down](htdocs/luci-static/resources/netports/icons/usb_stick_down.svg?sanitize=true) | ![usb_stick_up](htdocs/luci-static/resources/netports/icons/usb_stick_up.svg?sanitize=true) | USB 2G/3G/4G modem connection. |
 
 ## Screenshots
 
