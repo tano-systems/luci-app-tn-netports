@@ -130,11 +130,14 @@ function ports()
 				type = "usb_rndis"
 			end
 
-			if type == "usb_wifi" or
-			   type == "usb_2g" or
+			if type == "usb_2g" or
 			   type == "usb_3g" or
 			   type == "usb_4g" then
 				type = "usb_stick"
+			end
+
+			if type == "usb_wifi" then
+				type = "wifi"
 			end
 
 			if not util.contains(knowntypes, type) then
