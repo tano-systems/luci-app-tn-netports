@@ -22,6 +22,7 @@ All dates in this document are in `DD.MM.YYYY` format.
   option in `/etc/config/luci_netports` configuration file.
 - Added example screenshots.
 - Added `usb_stick`, `usb_2g`, `usb_3g`, `usb_4g` and `usb_wifi` new types and icons.
+- Added `vpn`, `gprs` and `ppp` new types and icons.
 
 ### Changed
 - Updated README.md file.
@@ -35,6 +36,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Renamed configuration parameter `global.hide_additional_info`
   to `global.default_additional_info`.
 - Renamed old type `usb` to `usb_rndis`. Old type name `usb` is supported but deprecated.
+- Changed icons for disabled state.
 
 ### Deprecated
 - Use type `usb_rndis` instead of `usb`.

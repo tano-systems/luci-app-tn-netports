@@ -123,7 +123,10 @@ function ports()
 				"usb_3g",
 				"usb_4g",
 				"usb_wifi",
-				"wifi"
+				"wifi",
+				"vpn",
+				"ppp",
+				"gprs"
 			}
 
 			if type == "usb" then

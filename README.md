@@ -61,6 +61,9 @@ Available port types (`type` setting):
 | `wifi`, `usb_wifi` | ![wifi_disabled](htdocs/luci-static/resources/netports/icons/wifi_disabled.svg?sanitize=true) | ![wifi_down](htdocs/luci-static/resources/netports/icons/wifi_down.svg?sanitize=true) | ![wifi_up](htdocs/luci-static/resources/netports/icons/wifi_up.svg?sanitize=true) | Wireless connection. |
 | `usb_rndis` | ![usb_rndis_disabled](htdocs/luci-static/resources/netports/icons/usb_rndis_disabled.svg?sanitize=true) | ![usb_rndis_down](htdocs/luci-static/resources/netports/icons/usb_rndis_down.svg?sanitize=true) | ![usb_rndis_up](htdocs/luci-static/resources/netports/icons/usb_rndis_up.svg?sanitize=true) | USB RNDIS connection. |
 | `usb_2g`, `usb_3g`, `usb_4g` | ![usb_stick_disabled](htdocs/luci-static/resources/netports/icons/usb_stick_disabled.svg?sanitize=true) | ![usb_stick_down](htdocs/luci-static/resources/netports/icons/usb_stick_down.svg?sanitize=true) | ![usb_stick_up](htdocs/luci-static/resources/netports/icons/usb_stick_up.svg?sanitize=true) | USB 2G/3G/4G modem connection. |
+| `gprs` | ![gprs_disabled](htdocs/luci-static/resources/netports/icons/gprs_disabled.svg?sanitize=true) | ![gprs_down](htdocs/luci-static/resources/netports/icons/gprs_down.svg?sanitize=true) | ![gprs_up](htdocs/luci-static/resources/netports/icons/gprs_up.svg?sanitize=true) | GPRS connection. |
+| `vpn` | ![vpn_disabled](htdocs/luci-static/resources/netports/icons/vpn_disabled.svg?sanitize=true) | ![vpn_down](htdocs/luci-static/resources/netports/icons/vpn_down.svg?sanitize=true) | ![vpn_up](htdocs/luci-static/resources/netports/icons/vpn_up.svg?sanitize=true) | VPN connection. |
+| `ppp` | ![ppp_disabled](htdocs/luci-static/resources/netports/icons/ppp_disabled.svg?sanitize=true) | ![ppp_down](htdocs/luci-static/resources/netports/icons/ppp_down.svg?sanitize=true) | ![ppp_up](htdocs/luci-static/resources/netports/icons/ppp_up.svg?sanitize=true) | PPP connection. |
 
 ## Screenshots
 
