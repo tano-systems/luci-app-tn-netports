@@ -117,10 +117,23 @@ function np_fmt_fwzones(p)
 function np_fmt_netif(p)
 {
 	var v = p.ifname
-	if (p.ntm && p.ntm.netname)
-		v += ' (<a href="/cgi-bin/luci/admin/network/network/'
-			+ p.ntm.netname + '">'
-			+ p.ntm.netname.toUpperCase() + '</a>)'
+	if (p.ntm && (p.ntm.netname || p.ntm.wifiname))
+	{
+		if (p.ntm.netname)
+		{
+			v += ' (<a href="/cgi-bin/luci/admin/network/network/'
+				+ p.ntm.netname + '">'
+				+ p.ntm.netname.toUpperCase() + '</a>)'
+		}
+
+		if (p.ntm.wifiname)
+		{
+			v += "<br />"
+			v += '[<a href="/cgi-bin/luci/admin/network/wireless/'
+				+ p.ntm.wifiname + '">'
+				+ p.ntm.wifiname + '</a>]'
+		}
+	}
 	return v
 }
 

@@ -63,6 +63,7 @@ local function get_ntm_info(netlist, ifname)
 		for idx, dev in ipairs(net.ifaces) do
 			if dev:name() == ifname then
 				info["netname"] = net.name
+				info["wifiname"] = net.wifiname
 				if net.fwzone then
 					info["fwzone"]       = net.fwzone:name()
 					info["fwzone_color"] = net.fwzone:get_color()
@@ -87,12 +88,19 @@ function ports()
 	local fwm  = require("luci.model.firewall").init()
 
 	for _, net in ipairs(ntm:get_networks()) do
-		local ifaces = { net:get_interface() }
+		local iface = net:get_interface()
+		local wifiname = nil
+
+		if iface:type() == "wifi" then
+			local wifinet = iface:get_wifinet()
+			wifiname = wifinet:id()
+		end
 
 		netlist[#netlist + 1] = {
-			name   = net:name(),
-			fwzone = fwm:get_zone_by_network(net:name()),
-			ifaces = ifaces
+			name     = net:name(),
+			wifiname = wifiname,
+			fwzone   = fwm:get_zone_by_network(net:name()),
+			ifaces   = { iface }
 		}
 	end
 
