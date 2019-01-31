@@ -24,6 +24,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Added `usb_stick`, `usb_2g`, `usb_3g`, `usb_4g` and `usb_wifi` new types and icons.
 - Added `vpn`, `gprs` and `ppp` new types and icons.
 - Added link to the wireless interface configuration.
+- Added `auto` port type for automatically detect type by interface name.
 
 ### Changed
 - Updated README.md file.

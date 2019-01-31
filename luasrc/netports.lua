@@ -77,6 +77,29 @@ local function get_ntm_info(netlist, ifname)
 	return info
 end
 
+local function type_autodetect(ifname)
+	local matches = {
+		copper = { "^eth%d+", "^en%l%d+%l%d+", "^sw%d+p%d+" },
+		usb_rndis = { "^usb%d+" },
+		usb_stick = { "^wwan%d+", "^ww%l%d+%l%d+" },
+		ppp = { "^ppp%d+" },
+		vpn = { "^tun%d+", "^tap%d+" },
+		wifi = { "^wlan%d+", "^wl%l%d+%l%d+" }
+	}
+
+	local i, t, m
+
+	for t, m in pairs(matches) do
+		for i in pairs(m) do
+			if ifname:match(m[i]) then
+				return t
+			end
+		end
+	end
+
+	-- default type is 'copper'
+	return "copper"
+end
 
 function ports()
 	local ports = {}
@@ -122,6 +145,7 @@ function ports()
 			local type   = section["type"]
 
 			local knowntypes = {
+				"auto",
 				"copper",
 				"fixed",
 				"usb", -- deprecated
@@ -137,22 +161,26 @@ function ports()
 				"gprs"
 			}
 
-			if type == "usb" then
-				type = "usb_rndis"
-			end
-
-			if type == "usb_2g" or
-			   type == "usb_3g" or
-			   type == "usb_4g" then
-				type = "usb_stick"
-			end
-
-			if type == "usb_wifi" then
-				type = "wifi"
-			end
-
 			if not util.contains(knowntypes, type) then
-				type = "copper"
+				type = "auto"
+			end
+
+			if type == "auto" then
+				type = type_autodetect(ifname)
+			else
+				if type == "usb" then
+					type = "usb_rndis"
+				end
+
+				if type == "usb_2g" or
+				   type == "usb_3g" or
+				   type == "usb_4g" then
+					type = "usb_stick"
+				end
+
+				if type == "usb_wifi" then
+					type = "wifi"
+				end
 			end
 
 			-- Port config parameters
