@@ -67,6 +67,7 @@ Available port types (`type` setting):
 | `ppp` | ![ppp_disabled](htdocs/luci-static/resources/netports/icons/ppp_disabled.svg?sanitize=true) | ![ppp_down](htdocs/luci-static/resources/netports/icons/ppp_down.svg?sanitize=true) | ![ppp_up](htdocs/luci-static/resources/netports/icons/ppp_up.svg?sanitize=true) | PPP connection. |
 
 Automatic network port type detection (`auto` type):
+
 | Interface name regular expression(s) | Example(s) | Detected type |
 | :------------- | :--- | :--- |
 | `^eth\d+`,<br />`^sw\d+p\d+`,<br />`^en[a-z]\d+[a-z]\d+` | `eth0`, `eth32`,<br />`sw1p4`,<br />`enp0s4`, `ens9f0` | `copper` |
