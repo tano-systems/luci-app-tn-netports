@@ -44,7 +44,7 @@ A minimal port declaration consists of the following lines:
 config port
 	option ifname 'eth0'
 ```
-These options can be set in the `global` section:
+These options can be set in the `port` sections:
 
 | Name                      | Type    | Required | Default | Description                                                                  |
 | ------------------------- | ------- | -------- | ------- | ---------------------------------------------------------------------------- |
