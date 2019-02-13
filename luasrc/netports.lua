@@ -114,17 +114,19 @@ function ports()
 		local iface = net:get_interface()
 		local wifiname = nil
 
-		if iface:type() == "wifi" then
-			local wifinet = iface:get_wifinet()
-			wifiname = wifinet:id()
-		end
+		if iface ~= nil then
+			if iface:type() == "wifi" then
+				local wifinet = iface:get_wifinet()
+				wifiname = wifinet:id()
+			end
 
-		netlist[#netlist + 1] = {
-			name     = net:name(),
-			wifiname = wifiname,
-			fwzone   = fwm:get_zone_by_network(net:name()),
-			ifaces   = { iface }
-		}
+			netlist[#netlist + 1] = {
+				name     = net:name(),
+				wifiname = wifiname,
+				fwzone   = fwm:get_zone_by_network(net:name()),
+				ifaces   = { iface }
+			}
+		end
 	end
 
 	uci:foreach("luci_netports", "port",
