@@ -102,6 +102,8 @@ local function type_autodetect(ifname)
 end
 
 function ports()
+	local bit = require("bit")
+
 	local ports = {}
 	local netlist = {}
 
@@ -203,7 +205,7 @@ function ports()
 
 			-- up or down
 			local flags = sysfs_net_read(ifname, "flags")
-			if tonumber(flags) & 1 == 1 then
+			if bit.band(tonumber(flags), 1) == 1 then
 				new_port["adminstate"] = "up"
 			else
 				new_port["adminstate"] = "down"

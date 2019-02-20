@@ -39,6 +39,7 @@ All dates in this document are in `DD.MM.YYYY` format.
   to `global.default_additional_info`.
 - Renamed old type `usb` to `usb_rndis`. Old type name `usb` is supported but deprecated.
 - Changed icons for disabled state.
+- Use luabitop for bitwise operations.
 
 ### Deprecated
 - Use type `usb_rndis` instead of `usb`.
