@@ -184,7 +184,7 @@ function np_fmt_tx(p)
 }
 
 // Start polling data every 5 seconds
-L.poll(5, L.url('admin/network/netports_info'), null,
+XHR.poll(-1, L.url('admin/network/netports_info'), null,
 	function(x, data) {
 		np_data_update(data)
 	}

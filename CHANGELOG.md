@@ -40,6 +40,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Renamed old type `usb` to `usb_rndis`. Old type name `usb` is supported but deprecated.
 - Changed icons for disabled state.
 - Use luabitop for bitwise operations.
+- Use polling interval from LuCI configuration (luci.main.pollinterval)
 
 ### Deprecated
 - Use type `usb_rndis` instead of `usb`.
