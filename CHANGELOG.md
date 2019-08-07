@@ -25,6 +25,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Added `vpn`, `gprs` and `ppp` new types and icons.
 - Added link to the wireless interface configuration.
 - Added `auto` port type for automatically detect type by interface name.
+- Added spinner for messages about waiting for data.
 
 ### Changed
 - Updated README.md file.
