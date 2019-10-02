@@ -1,110 +1,101 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
-#: htdocs/luci-static/resources/netports/netports.js:172
-#: htdocs/luci-static/resources/netports/netports.js:183
-msgid "%.2mB<br />(%d&#160;%s)"
+#: htdocs/luci-static/resources/netports/netports.js:229
+#: htdocs/luci-static/resources/netports/netports.js:242
+msgid "%.2mB"
 msgstr ""
 
-#: luasrc/view/netports/status_table.htm:107
-#: luasrc/view/netports/status_table.htm:136
+#: htdocs/luci-static/resources/netports/netports.js:255
 msgid "Bridge member"
 msgstr ""
 
-#: luasrc/view/netports/status_table.htm:45
+#: htdocs/luci-static/resources/netports/netports.js:371
 msgid "Collecting data..."
 msgstr ""
 
-#: htdocs/luci-static/resources/netports/netports.js:63
+#: htdocs/luci-static/resources/netports/netports.js:124
 msgid "Connected&#8201;"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports/netports.js:76
+#: htdocs/luci-static/resources/netports/netports.js:140
 msgid "Disabled&#8201;"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports/netports.js:72
+#: htdocs/luci-static/resources/netports/netports.js:133
 msgid "Disconnected&#8201;"
 msgstr ""
 
-#: luasrc/view/netports/status_table.htm:108
-#: luasrc/view/netports/status_table.htm:134
+#: htdocs/luci-static/resources/netports/netports.js:256
 msgid "Firewall zones"
 msgstr ""
 
-#: luasrc/view/netports/status_table.htm:214
-msgid "Hide additional information"
-msgstr ""
-
-#: luasrc/view/netports/status_table.htm:106
-#: luasrc/view/netports/status_table.htm:135
+#: htdocs/luci-static/resources/netports/netports.js:254
 msgid "Interface"
 msgstr ""
 
-#: luasrc/view/netports/status_table.htm:105
-#: luasrc/view/netports/status_table.htm:133
+#: htdocs/luci-static/resources/netports/netports.js:253
 msgid "Link status"
 msgstr ""
 
-#: luasrc/view/netports/status_table.htm:142
-msgid "MAC address"
+#: htdocs/luci-static/resources/netports/netports.js:259
+msgid "MAC-address"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports/netports.js:61
+#: htdocs/luci-static/resources/netports/netports.js:122
 msgid "Mbit/s"
 msgstr ""
 
-#: luasrc/view/netports/status_table.htm:104
+#: htdocs/luci-static/resources/netports/netports.js:252
 msgid "Name and MAC-address"
 msgstr ""
 
-#: luasrc/view/admin_status/index/25-netports.htm:7
+#: htdocs/luci-static/resources/netports/netports.js:357
 msgid "Network Interfaces Ports Status"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports/netports.js:173
-#: htdocs/luci-static/resources/netports/netports.js:184
-msgid "Pkts."
+#: htdocs/luci-static/resources/netports/netports.js:538
+msgid "No data to display"
 msgstr ""
 
-#: luasrc/view/netports/status_table.htm:109
-#: luasrc/view/netports/status_table.htm:140
+#: htdocs/luci-static/resources/netports/netports.js:257
 msgid "RX"
 msgstr ""
 
-#: luasrc/view/netports/status_table.htm:213
-msgid "Show additional information"
-msgstr ""
-
-#: luasrc/view/netports/status_table.htm:207
-msgid "Switch to horizontal mode"
-msgstr ""
-
-#: luasrc/view/netports/status_table.htm:206
-msgid "Switch to vertical mode"
-msgstr ""
-
-#: luasrc/view/netports/status_table.htm:110
-#: luasrc/view/netports/status_table.htm:141
+#: htdocs/luci-static/resources/netports/netports.js:258
 msgid "TX"
 msgstr ""
 
-#: luasrc/view/netports/status_table.htm:163
-msgid "There is no available information"
+#: htdocs/luci-static/resources/netports/netports.js:313
+msgid "Toggle additional information"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports/netports.js:66
+#: htdocs/luci-static/resources/netports/netports.js:326
+#: htdocs/luci-static/resources/netports/netports.js:423
+msgid "Toggle view mode"
+msgstr ""
+
+#: htdocs/luci-static/resources/netports/netports.js:414
+msgid "Too many ports to display horizontally"
+msgstr ""
+
+#: htdocs/luci-static/resources/netports/netports.js:127
 msgid "full-duplex"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports/netports.js:68
+#: htdocs/luci-static/resources/netports/netports.js:129
 msgid "half-duplex"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports/netports.js:126
+#: htdocs/luci-static/resources/netports/netports.js:217
 msgid "none"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports/netports.js:155
+#: htdocs/luci-static/resources/netports/netports.js:231
+#: htdocs/luci-static/resources/netports/netports.js:244
+msgid "pkts."
+msgstr ""
+
+#: htdocs/luci-static/resources/netports/netports.js:180
 msgid "port&nbsp;%d"
 msgstr ""

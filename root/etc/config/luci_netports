@@ -1,8 +1,7 @@
-
 config global 'global'
-	option default_additional_info 'true'
-	option default_h_mode          'false'
-	option hv_mode_switch_button   'false'
+	option default_additional_info 'false'
+	option default_h_mode          'true'
+	option hv_mode_switch_button   'true'
 
 config port
 	option name   'Port 1'

@@ -1,12 +1,10 @@
 # Network ports status LuCI application
 
 ## Description
-This package allows you to monitor current state of the
-network interfaces specified in configuration file (`/etc/config/luci_netports`).
+This package allows you to monitor current state of the network interfaces specified in configuration file (`/etc/config/luci_netports`).
 
 ## Dependencies
-This LuCI application developed for LuCI master branch.
-Application requires luabitop package to be installed.
+This LuCI application developed for LuCI master branch. Application requires luabitop package to be installed.
 
 ## Supported languages
 - English
@@ -15,8 +13,7 @@ Application requires luabitop package to be installed.
 ## UCI configuration
 UCI configuration for this application is stored in `/etc/config/luci_netports` file.
 
-This file contain one `global` section with global application settings and one
-or more `port` sections with network ports settings.
+This file contain one `global` section with global application settings and one or more `port` sections with network ports settings.
 
 ### Global settings
 
@@ -36,6 +33,8 @@ These options can be set in the `global` section:
 | `default_h_mode`          | boolean | no       | false   | Use horizontal view mode by default.                                         |
 | `hv_mode_switch_button`   | boolean | no       | false   | Show button for manual switching between horizontal and vertical view modes. |
 
+Horizontal display mode can be used maximum for 6 interfaces. If there are more interfaces, the vertical display mode will be automatically activated without the possibility of switching to the horizontal mode.
+
 ### Ports settings
 
 Sections of the type `port` declare network port settings for displaying in application.
@@ -52,6 +51,7 @@ These options can be set in the `port` sections:
 | `ifname`                  | string  | yes      | (none)  | Network interface name. |
 | `name`                    | string  | no       | value of `ifname` | Custom port name for displaying in application. |
 | `type`                    | string  | no       | `auto` | Custom port type. Available port types listed in the table below. |
+| `disable`                 | boolean | no       | false  | Do not display specified interface. |
 
 Available port types (`type` setting):
 
@@ -64,7 +64,7 @@ Available port types (`type` setting):
 | `usb_rndis` | ![usb_rndis_disabled](htdocs/luci-static/resources/netports/icons/usb_rndis_disabled.svg?sanitize=true) | ![usb_rndis_down](htdocs/luci-static/resources/netports/icons/usb_rndis_down.svg?sanitize=true) | ![usb_rndis_up](htdocs/luci-static/resources/netports/icons/usb_rndis_up.svg?sanitize=true) | USB RNDIS connection. |
 | `usb_stick`, `usb_2g`, `usb_3g`, `usb_4g` | ![usb_stick_disabled](htdocs/luci-static/resources/netports/icons/usb_stick_disabled.svg?sanitize=true) | ![usb_stick_down](htdocs/luci-static/resources/netports/icons/usb_stick_down.svg?sanitize=true) | ![usb_stick_up](htdocs/luci-static/resources/netports/icons/usb_stick_up.svg?sanitize=true) | USB 2G/3G/4G modem connection. |
 | `gprs` | ![gprs_disabled](htdocs/luci-static/resources/netports/icons/gprs_disabled.svg?sanitize=true) | ![gprs_down](htdocs/luci-static/resources/netports/icons/gprs_down.svg?sanitize=true) | ![gprs_up](htdocs/luci-static/resources/netports/icons/gprs_up.svg?sanitize=true) | GPRS connection. |
-| `vpn` | ![vpn_disabled](htdocs/luci-static/resources/netports/icons/vpn_disabled.svg?sanitize=true) | ![vpn_down](htdocs/luci-static/resources/netports/icons/vpn_down.svg?sanitize=true) | ![vpn_up](htdocs/luci-static/resources/netports/icons/vpn_up.svg?sanitize=true) | VPN connection. |
+| `vpn`, `tunnel` | ![tunnel_disabled](htdocs/luci-static/resources/netports/icons/tunnel_disabled.svg?sanitize=true) | ![tunnel_down](htdocs/luci-static/resources/netports/icons/tunnel_down.svg?sanitize=true) | ![tunnel_up](htdocs/luci-static/resources/netports/icons/tunnel_up.svg?sanitize=true) | Tunnel connection. |
 | `ppp` | ![ppp_disabled](htdocs/luci-static/resources/netports/icons/ppp_disabled.svg?sanitize=true) | ![ppp_down](htdocs/luci-static/resources/netports/icons/ppp_down.svg?sanitize=true) | ![ppp_up](htdocs/luci-static/resources/netports/icons/ppp_up.svg?sanitize=true) | PPP connection. |
 
 Automatic network port type detection (`auto` type):
@@ -76,19 +76,20 @@ Automatic network port type detection (`auto` type):
 | `^usb\d+` | `usb0` | `usb_rndis` |
 | `^wwan\d+`,<br />`^ww[a-z]\d+[a-z]\d+` | `wwan0`,<br />`wwp0s4`, `wws1f4` | `usb_stick` |
 | `^ppp\d+` | `ppp0` | `ppp` |
-| `^tun\d+`,<br />`^tap\d+` | `tun0`, `tap0` | `vpn` |
+| `^tun\d+`,<br />`^tap\d+`,<br />`^wg\d+` | `tun0`, `tap0`, `wg0` | `tunnel` |
 
 ## Screenshots
 
-### Vertical view mode (default)
+### Vertical mode
+
 ![Vertical view mode](screenshots/v-mode-5-ports.png?raw=true "Vertical view mode")
 
-### Horizontal view mode
-
-With additional information:
-
-![Horizontal view mode](screenshots/h-mode-5-ports.png?raw=true "Horizontal view mode")
+### Horizontal mode
 
 Without additional information:
 
-![Horizontal view mode (additional information is hidden)](screenshots/h-mode-5-ports-short.png?raw=true "Horizontal view mode (additional information is hidden)")
+![Horizontal view mode](screenshots/h-mode-5-ports.png?raw=true "Horizontal view mode")
+
+With additional information:
+
+![Horizontal view mode (with extra information)](screenshots/h-mode-5-ports-extra.png?raw=true "Horizontal view mode (with extra information)")

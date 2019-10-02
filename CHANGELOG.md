@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
+
 ### Added
 - This CHANGELOG file.
 - Handling cases when the firewall zones are assigned to both the network
@@ -22,10 +23,11 @@ All dates in this document are in `DD.MM.YYYY` format.
   option in `/etc/config/luci_netports` configuration file.
 - Added example screenshots.
 - Added `usb_stick`, `usb_2g`, `usb_3g`, `usb_4g` and `usb_wifi` new types and icons.
-- Added `vpn`, `gprs` and `ppp` new types and icons.
+- Added `tunnel`, `gprs` and `ppp` new types and icons.
 - Added link to the wireless interface configuration.
 - Added `auto` port type for automatically detect type by interface name.
 - Added spinner for messages about waiting for data.
+- Added rpcd ubus script for data gathering
 
 ### Changed
 - Updated README.md file.
@@ -41,7 +43,8 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Renamed old type `usb` to `usb_rndis`. Old type name `usb` is supported but deprecated.
 - Changed icons for disabled state.
 - Use luabitop for bitwise operations.
-- Use polling interval from LuCI configuration (luci.main.pollinterval)
+- Use polling interval from LuCI configuration (luci.main.pollinterval).
+- Totally rework JavaScript code.
 
 ### Deprecated
 - Use type `usb_rndis` instead of `usb`.
@@ -53,6 +56,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Fix Russian translations for "Connected", "Disconnected" and "Disabled".
 - Properly handling of the operative interface state from
   `/sys/class/net/<if>/operstate` sysfs file.
+- Fix ports type icons flickering on updates.
 
 ## [Version 1.0.0] (07.12.2018)
 

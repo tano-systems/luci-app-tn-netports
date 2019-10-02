@@ -1,0 +1,10 @@
+{
+	"netports": {
+		"description": "Grant access for luci-app-netports",
+		"read": {
+			"ubus": {
+				"netports": [ "getPortsInfo" ]
+			}
+		}
+	}
+}

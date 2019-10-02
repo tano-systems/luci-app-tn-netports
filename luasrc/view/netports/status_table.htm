@@ -1,12 +1,10 @@
 <%#
- Copyright (c) 2018, Tano Systems. All Rights Reserved.
+ Copyright (c) 2018-2019, Tano Systems. All Rights Reserved.
  Anton Kikin <a.kikin@tano-systems.com>
 -%>
 
 <%
 	local uci = require("luci.model.uci").cursor()
-
-	local np_h_mode_first_col_width = 25
 
 	local np_default_additional_info = uci:get_bool(
 		"luci_netports", "global", "default_additional_info")
@@ -26,289 +24,29 @@
 	end
 %>
 
-<style>
-	.netports-linkstatus-icon-container {
-		width: 42px;
-	}
-	.netports-linkstatus-icon {
-		  display: inline-block;
-		max-width: 100%;
-		    width: 100%;
-		   height: auto;
-	}
-	.netports-linkstatus-icon-container-h {
-		float: left;
-		margin-right: 8px;
-	}
-	.netports-linkstatus-text {
-		white-space: nowrap;
-	}
-	.netports-linkstatus-text-disconnected,
-	.netports-linkstatus-text-disabled {
-		color: #bbbbbb;
-	}
-	.netports-ifacebox,
-	.netports-ifacebox-head {
-		width: auto !important;
-		width: fit-content !important;
-		width: -moz-fit-content !important;
-		width: -webkit-fit-content !important;
-	}
-	.netports-ifacebox {
-		display: block;
-		padding: 0;
-		margin: 0;
-		min-width: auto;
-	}
-	.netports-ifacebox-head {
-		padding-right: 8px;
-		padding-left: 8px;
-		text-align: center;
-		min-width: 100px;
-	}
-	.netports-ifacebox-head a {
-		color: inherit;
-	}
-</style>
+<link href="<%=resource%>/netports/netports.css" rel="stylesheet">
 
-<div class="cbi-section">
-	<input class="cbi-button"
-		id="btn-np-switch-hv-mode" style="display: none"
-		data-h-mode="<%=bool(np_default_h_mode)%>"
-		type="button" value="..." disabled="true"
-		onclick="np_switch_hv_mode(this); np_data_update_recent()"
-	/>
-	<input class="cbi-button"
-		id="btn-np-toggle-additional-info" style="display: none"
-		<% if np_default_additional_info == true then %>
-			data-short="false"
-		<% else %>
-			data-short="true"
-		<% end %>
-		type="button" value="..." disabled="true"
-		onclick="np_toggle_additional_info(this); np_data_update_recent()"
-	/>
-</div>
+<div id="netports"></div>
 
-<div class="table-wrapper"><div class="table" id="np-status-table">
-	<div class="tr table-titles">
-		<div class="th top center">...</div>
-	</div>
-	<div class="tr placeholder">
-		<div class="td"><em class="spinning"><%:Collecting data...%></em></div>
-	</div>
-</div></div>
-
+<script type="text/javascript" src="<%=resource%>/netports/netports.js?v=9e8bdbc484d18896226d06aa8fae3e4e"></script>
 <script type="text/javascript">//<![CDATA[
+	var netports_table = new NetPorts({
+		target: document.getElementById('netports'),
+		mode: <%=bool(np_default_h_mode)%> ? NetPortsMode.H : NetPortsMode.V,
+		modeSwitchButton: <%=bool(np_hv_mode_switch_button)%>,
+		autoSwitchHtoV: true,
+		autoSwitchHtoVThreshold: 6,
+		hModeFirstColWidth: 20,
+		hModeExpanded: <%=bool(np_default_additional_info)%>,
+	});
 
-	var np_data_recent   = null
-	var np_h_mode_recent = null
-
-	var np_max_ifaces_for_h_mode = 6
-
-	function elm(id)
-	{
-		return document.getElementById(id)
-	}
-
-	function np_table_header(tbl, data, h_mode)
-	{
-		var len = data.length
-
-		if (h_mode)
-		{
-			if (!np_data_recent || (len != np_data_recent.length) || (np_h_mode_recent !== h_mode))
-			{
-				var inner = ''
-				var col_width
-				var p
-
-				inner += '<div class="tr table-titles">'
-				inner += '<div class="th top left" style="width: <%=np_h_mode_first_col_width%>%"></div>'
-
-				col_width = (100 - <%=np_h_mode_first_col_width%>) / len
-
-				for (p = 0; p < len; p++)
-				{
-					inner += '<div id="np-status-table-header-' + p +
-						'" class="th top left" style="width: ' + col_width + '%">'
-
-					inner += data[p].name
-					inner += '</div>'
-				}
-
-				inner += '</div>'
-				tbl.innerHTML = inner;
-			}
+	// Start polling data
+	XHR.poll(-1, L.url('admin/network/netports_info'), null,
+		function(x, data) {
+			if (x.status == 200)
+				netports_table.updateData(data);
 			else
-			{
-				for (p = 0; p < len; p++)
-				{
-					var header = elm('np-status-table-header-' + p)
-					header.innerHTML = data[p].name
-				}
-			}
+				netports_table.updateData(null);
 		}
-		else if (!np_data_recent || (np_h_mode_recent !== h_mode))
-		{
-			var inner = ''
-
-			inner += '<div class="tr table-titles">'
-			inner += '<div class="th top left" style="min-width: 130px"><%:Name and MAC-address%></div>'
-			inner += '<div class="th top left" style="min-width: 165px"><%:Link status%></div>'
-			inner += '<div class="th top left"><%:Interface%></div>'
-			inner += '<div class="th top left"><%:Bridge member%></div>'
-			inner += '<div class="th top left"><%:Firewall zones%></div>'
-			inner += '<div class="th top left"><%:RX%></div>'
-			inner += '<div class="th top left"><%:TX%></div>'
-			inner += '</div>'
-
-			tbl.innerHTML = inner;
-		}
-	}
-
-	function np_table_rows(tbl, data, short_mode, h_mode)
-	{
-		var rows = []
-
-		if (h_mode)
-		{
-			function np_h_mode_table_row(title, data, func)
-			{
-				var row = []
-
-				row.push(title)
-				data.forEach(function(p) { row.push(func(p)) })
-
-				return row
-			}
-
-			rows.push(np_h_mode_table_row("<%:Link status%>", data, np_fmt_status))
-			rows.push(np_h_mode_table_row("<%:Firewall zones%>", data, np_fmt_fwzones))
-			rows.push(np_h_mode_table_row("<%:Interface%>", data, np_fmt_netif))
-			rows.push(np_h_mode_table_row("<%:Bridge member%>", data, np_fmt_bridgeif))
-
-			if (!short_mode)
-			{
-				rows.push(np_h_mode_table_row("<%:RX%>", data, np_fmt_rx))
-				rows.push(np_h_mode_table_row("<%:TX%>", data, np_fmt_tx))
-				rows.push(np_h_mode_table_row("<%:MAC address%>", data, np_fmt_mac))
-			}
-		}
-		else
-		{
-			data.forEach(function(p) {
-				var row = []
-
-				row.push('<strong>' + p.name + '</strong><br />' + np_fmt_mac(p))
-				row.push(np_fmt_status(p, true))
-				row.push(np_fmt_netif(p))
-				row.push(np_fmt_bridgeif(p))
-				row.push(np_fmt_fwzones(p))
-				row.push(np_fmt_rx(p))
-				row.push(np_fmt_tx(p))
-
-				rows.push(row)
-			})
-		}
-
-		cbi_update_table(tbl, rows,
-			'<%:There is no available information%>');
-	}
-
-	function np_data_update(data)
-	{
-		var short_mode = true
-		var h_mode
-
-		var btn_np_toggle_additional_info =
-			elm('btn-np-toggle-additional-info');
-
-		var btn_np_switch_hv_mode =
-			elm('btn-np-switch-hv-mode');
-
-		h_mode = (btn_np_switch_hv_mode.getAttribute('data-h-mode') === "true")
-
-		if (h_mode && (data.length > np_max_ifaces_for_h_mode))
-		{
-			np_switch_hv_mode(btn_np_switch_hv_mode)
-			h_mode = false
-
-			<% if np_hv_mode_switch_button == true then %>
-				btn_np_switch_hv_mode.style.display = "none"
-			<% end %>
-		}
-		else
-		{
-			if (data.length <= np_max_ifaces_for_h_mode)
-			{
-				<% if np_hv_mode_switch_button == true then %>
-					btn_np_switch_hv_mode.removeAttribute('disabled', true);
-					btn_np_switch_hv_mode.style.display = "inline-block"
-				<% else %>
-					<% if np_default_h_mode == true then %>
-						if (!h_mode)
-						{
-							np_switch_hv_mode(btn_np_switch_hv_mode)
-							h_mode = true
-						}
-					<% end %>
-				<% end %>
-			}
-		}
-
-		btn_np_switch_hv_mode.setAttribute('value', h_mode
-			? '<%:Switch to vertical mode%>'
-			: '<%:Switch to horizontal mode%>')
-
-		if (h_mode)
-		{
-			short_mode = (btn_np_toggle_additional_info.getAttribute('data-short') === "true");
-			btn_np_toggle_additional_info.setAttribute('value', short_mode
-				? '<%:Show additional information%>'
-				: '<%:Hide additional information%>')
-
-			btn_np_toggle_additional_info.removeAttribute('disabled', true);
-			btn_np_toggle_additional_info.style.display = "inline-block"
-		}
-		else
-		{
-			btn_np_toggle_additional_info.style.display = "none"
-		}
-
-		var tbl = elm('np-status-table')
-
-		np_table_header(tbl, data, h_mode)
-		np_table_rows(tbl, data, short_mode, h_mode)
-
-		np_data_recent   = data;
-		np_h_mode_recent = h_mode;
-	}
-
-	function np_data_update_recent()
-	{
-		if (np_data_recent)
-			np_data_update(np_data_recent)
-	}
-
-	function np_toggle_additional_info(btn)
-	{
-		var additional = (btn.getAttribute('data-short') === 'false');
-
-		btn.setAttribute('data-short', additional)
-		btn.setAttribute('disabled', true)
-		btn.blur()
-	}
-
-	function np_switch_hv_mode(btn)
-	{
-		var h_mode = (btn.getAttribute('data-h-mode') === 'false');
-
-		btn.setAttribute('data-h-mode', h_mode)
-		btn.setAttribute('disabled', true)
-		btn.blur()
-	}
-
+	)
 //]]></script>
-
-<script type="text/javascript" src="<%=resource%>/netports/netports.js?v=82b1eacdea375dde877832855ff5743c"></script>
