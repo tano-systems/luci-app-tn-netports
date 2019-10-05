@@ -8,6 +8,10 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
 
+*Nothing yet*
+
+## [Version 1.1.0] (06.10.2019)
+
 ### Added
 - This CHANGELOG file.
 - Handling cases when the firewall zones are assigned to both the network
@@ -62,4 +66,5 @@ All dates in this document are in `DD.MM.YYYY` format.
 Initial release
 
 [Unreleased]: https://github.com/tano-systems/luci-app-netports/tree/master
+[Version 1.1.0]: https://github.com/tano-systems/luci-app-netports/releases/tag/v1.1.0
 [Version 1.0.0]: https://github.com/tano-systems/luci-app-netports/releases/tag/v1.0.0

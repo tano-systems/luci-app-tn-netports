@@ -21,7 +21,7 @@ function NetPorts(inputConfig) {
 		hModeExpanded: false,
 	}
 
-	const version = "1.0.0"
+	const version = "1.1.0"
 
 	const svgModeSwitch = 
 		'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">' +
