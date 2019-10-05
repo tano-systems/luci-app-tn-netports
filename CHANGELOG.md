@@ -13,7 +13,6 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Handling cases when the firewall zones are assigned to both the network
   interface and the bridge of which the interface is a member. In this case,
   information about both firewall zones is displayed.
-- Hide additional information toggle button before first data is arrived.
 - Added vertical table view mode. By default used new vertical mode. This may
   changed by the `global.default_h_mode` option in `/etc/config/luci_netports`
   configuration file. If used horizontal mode then view mode is automatically
@@ -22,10 +21,10 @@ All dates in this document are in `DD.MM.YYYY` format.
   is disabled (not shown). Button may be enabled by the `global.hv_mode_switch_button`
   option in `/etc/config/luci_netports` configuration file.
 - Added example screenshots.
-- Added `usb_stick`, `usb_2g`, `usb_3g`, `usb_4g` and `usb_wifi` new types and icons.
-- Added `tunnel`, `gprs` and `ppp` new types and icons.
-- Added link to the wireless interface configuration.
+- Added `usb_stick`, `usb_2g`, `usb_3g`, `usb_4g`, `tunnel`, `gprs`, `ppp`
+  and `usb_wifi` new types and icons.
 - Added `auto` port type for automatically detect type by interface name.
+- Added link to the wireless interface configuration.
 - Added spinner for messages about waiting for data.
 - Added rpcd ubus script for data gathering
 
