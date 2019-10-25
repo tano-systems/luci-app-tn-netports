@@ -56,7 +56,7 @@ local function type_autodetect(ifname)
 		usb_rndis = { "^usb%d+" },
 		usb_stick = { "^wwan%d+", "^ww%l%d+%l%d+" },
 		ppp = { "^ppp%d+" },
-		vpn = { "^tun%d+", "^tap%d+" },
+		tunnel = { "^tun%d+", "^tap%d+", "^wg%d+" },
 		wifi = { "^wlan%d+", "^wl%l%d+%l%d+" }
 	}
 
@@ -162,6 +162,7 @@ local methods = {
 						"usb_wifi",
 						"wifi",
 						"vpn",
+						"tunnel",
 						"ppp",
 						"gprs"
 					}
@@ -172,20 +173,16 @@ local methods = {
 
 					if type == "auto" then
 						type = type_autodetect(ifname)
-					else
-						if type == "usb" then
-							type = "usb_rndis"
-						end
-
-						if type == "usb_2g" or
+					elseif type == "usb" then
+						type = "usb_rndis"
+					elseif type == "usb_2g" or
 						   type == "usb_3g" or
 						   type == "usb_4g" then
-							type = "usb_stick"
-						end
-
-						if type == "usb_wifi" then
-							type = "wifi"
-						end
+						type = "usb_stick"
+					elseif type == "usb_wifi" then
+						type = "wifi"
+					elseif type == "vpn" then
+						type = "tunnel"
 					end
 
 					-- Port config parameters
