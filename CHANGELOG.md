@@ -10,6 +10,12 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 *Nothing yet*
 
+## [Version 1.1.1] (26.10.2019)
+
+### Fixed
+- Fixed display of the icon for 'vpn' port type.
+- Fixed displaying of an empty MAC address.
+
 ## [Version 1.1.0] (06.10.2019)
 
 ### Added
@@ -66,5 +72,6 @@ All dates in this document are in `DD.MM.YYYY` format.
 Initial release
 
 [Unreleased]: https://github.com/tano-systems/luci-app-netports/tree/master
+[Version 1.1.1]: https://github.com/tano-systems/luci-app-netports/releases/tag/v1.1.1
 [Version 1.1.0]: https://github.com/tano-systems/luci-app-netports/releases/tag/v1.1.0
 [Version 1.0.0]: https://github.com/tano-systems/luci-app-netports/releases/tag/v1.0.0
