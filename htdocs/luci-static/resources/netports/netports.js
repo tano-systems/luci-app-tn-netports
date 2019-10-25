@@ -68,7 +68,7 @@ function NetPorts(inputConfig) {
 	}
 
 	var fmtMAC = function(portData) {
-		return portData.hwaddr ? portData.hwaddr.toUpperCase() : '&nbsp;';
+		return portData.hwaddr ? portData.hwaddr.toUpperCase() : '\u00a0'; /* &nbsp; */
 	}
 
 	var fmtStatus = function(portData) {
