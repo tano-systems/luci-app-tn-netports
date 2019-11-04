@@ -22,9 +22,9 @@ IF EXIST %~dp0/htdocs (
 	pscp -r %EXTRA_OPTIONS% %~dp0/htdocs/* %HOST%:%LUCI_HTDOCS_PATH%
 )
 
-rem IF EXIST %~dp0/root (
-rem 	pscp -r %EXTRA_OPTIONS% %~dp0/root/* %HOST%:%LUCI_ROOT_PATH%
-rem )
+IF EXIST %~dp0/root (
+	pscp -r %EXTRA_OPTIONS% %~dp0/root/* %HOST%:%LUCI_ROOT_PATH%
+)
 
 rem Clear LuCI index cache
 plink %EXTRA_OPTIONS% %HOST% "/etc/init.d/uhttpd stop; rm -rf /tmp/luci-*; /etc/init.d/uhttpd start"
