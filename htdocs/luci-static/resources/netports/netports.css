@@ -45,27 +45,27 @@
 	color: inherit;
 }
 .netports-title {
+	text-align: left;
+	justify-content: space-between;
 	display: flex;
+	flex-flow: row-reverse;
 	align-items: flex-end;
 }
-.netports-title h3 {
-	width: 100%;
-}
 .netports-copyright {
-	text-align: right;
-	margin: 0 2px 0 16px;
+	margin: 0;
 	color: #ccc;
 	font-size: 85%;
 	white-space: nowrap;
 }
 .netports-buttons {
-	text-align: right;
-	margin: 0 2px 0 6px;
+	margin: 0 6px 0 0;
 	padding: 0;
+	display: flex;
+	flex-flow: row-reverse;
 }
 .netports-buttons button {
 	margin-bottom: 8px;
-	margin-left: 4px;
+	margin-right: 4px;
 	height: 22px;
 	padding: 0 10px;
 	display: inline-flex;
