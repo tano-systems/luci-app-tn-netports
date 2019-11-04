@@ -10,6 +10,12 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 *Nothing yet*
 
+## [Version 2.0.0] (04.11.2019)
+
+### Changed
+- Added support for client side view introduced in the latest changes
+  in the master branch of the LuCI.
+
 ## [Version 1.1.1] (26.10.2019)
 
 ### Fixed
@@ -72,6 +78,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 Initial release
 
 [Unreleased]: https://github.com/tano-systems/luci-app-netports/tree/master
+[Version 2.0.0]: https://github.com/tano-systems/luci-app-netports/releases/tag/v2.0.0
 [Version 1.1.1]: https://github.com/tano-systems/luci-app-netports/releases/tag/v1.1.1
 [Version 1.1.0]: https://github.com/tano-systems/luci-app-netports/releases/tag/v1.1.0
 [Version 1.0.0]: https://github.com/tano-systems/luci-app-netports/releases/tag/v1.0.0
