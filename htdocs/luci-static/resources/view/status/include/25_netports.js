@@ -8,24 +8,6 @@
 'require uci';
 'require netports';
 
-/*
-	local np_default_additional_info = uci:get_bool(
-		"luci_netports", "global", "default_additional_info")
-
-	local np_default_h_mode = uci:get_bool(
-		"luci_netports", "global", "default_h_mode")
-
-	local np_hv_mode_switch_button = uci:get_bool(
-		"luci_netports", "global", "hv_mode_switch_button")
-
-	local function bool(value)
-		if value or value == true then
-			return "true"
-		else
-			return "false"
-		end
-	end
-*/
 var callNetPortsGetInfo = rpc.declare({
 	object: 'netports',
 	method: 'getPortsInfo',
@@ -50,10 +32,6 @@ return L.Class.extend({
 
 			var np_hv_mode_switch_button =
 				parseInt(uci.get('luci_netports', 'global', 'hv_mode_switch_button')) == 1;
-
-			console.log(np_default_additional_info);
-			console.log(np_default_h_mode);
-			console.log(np_hv_mode_switch_button);
 
 			netports_object = new netports.NetPorts({
 				target: netports_el,
