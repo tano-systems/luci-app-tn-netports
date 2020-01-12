@@ -155,16 +155,14 @@ var NetPorts = L.Class.extend({
 			{
 				if (portData.ntm.netname)
 				{
-					v += ' (<a href="/cgi-bin/luci/admin/network/network/'
-						+ portData.ntm.netname + '">'
+					v += ' (<a href="/cgi-bin/luci/admin/network/network">'
 						+ portData.ntm.netname.toUpperCase() + '</a>)';
 				}
 
 				if (portData.ntm.wifiname)
 				{
 					v += "<br />";
-					v += '[<a href="/cgi-bin/luci/admin/network/wireless/'
-						+ portData.ntm.wifiname + '">'
+					v += '[<a href="/cgi-bin/luci/admin/network/wireless">'
 						+ portData.ntm.wifiname + '</a>]';
 				}
 			}
@@ -177,8 +175,7 @@ var NetPorts = L.Class.extend({
 				var v = portData.bridge.ifname;
 
 				if (portData.ntm_bridge && portData.ntm_bridge.netname)
-					v += ' (<a href="/cgi-bin/luci/admin/network/network/'
-						+ portData.ntm_bridge.netname + '">'
+					v += ' (<a href="/cgi-bin/luci/admin/network/network">'
 						+ portData.ntm_bridge.netname.toUpperCase() + '</a>)';
 
 				v += ',<br />' + _('port&nbsp;%d').format(portData.bridge.port);

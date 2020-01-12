@@ -8,7 +8,8 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
 
-*Nothing yet*
+### Fixed
+- Fixed links to network interfaces page.
 
 ## [Version 2.0.0] (04.11.2019)
 
