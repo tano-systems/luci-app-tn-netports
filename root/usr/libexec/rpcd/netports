@@ -215,6 +215,9 @@ local methods = {
 
 						-- Value is an integer representing the link speed in Mbits/sec
 						new_port["speed"] = tonumber(sysfs_net_read(ifname, "speed")) or 0
+						if new_port["speed"] < 0 then
+							new_port["speed"] = 0
+						end
 					end
 
 					-- Port interface statistics

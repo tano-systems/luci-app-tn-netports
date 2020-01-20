@@ -8,7 +8,8 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
 
-*Nothing yet*
+### Fixed
+- Fixed handling of negative speed values in sysfs.
 
 ## [Version 2.0.1] (13.01.2020)
 
