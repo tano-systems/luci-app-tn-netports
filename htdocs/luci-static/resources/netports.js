@@ -348,8 +348,8 @@ var NetPorts = L.Class.extend({
 
 			var title = E('div', { class: 'netports-title' }, [
 				E('div', { class: 'netports-copyright' },
-					E('a', { href: 'https://github.com/tano-systems/luci-app-netports' },
-						'luci-app-netports ' + NetPortsVersion)
+					E('a', { href: 'https://github.com/tano-systems/luci-app-tn-netports' },
+						'luci-app-tn-netports ' + NetPortsVersion)
 				),
 				E('div', { class: 'netports-buttons' }, buttons)
 			]);
