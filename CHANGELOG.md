@@ -8,7 +8,8 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
 
-*Nothing yet*
+### Changed
+- Added translation contexts for some strings.
 
 ## [Version 2.0.2] (20.01.2020)
 

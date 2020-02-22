@@ -108,14 +108,6 @@ var NetPorts = L.Class.extend({
 
 			var statusText = E('div', { class: "netports-linkstatus-text" });
 
-			/*
-			 * &#8201; (U+2009) is a thin space HTML entity code (&thinsp).
-			 *
-			 * I use this in the translatable strings because the strings
-			 * "Connected", "Disconnected" and "Disabled" have incorrect
-			 * translations in luci-base module and overlaps the translations
-			 * from this application.
-			 */
 			if (adminup)
 			{
 				if (phyup)
@@ -125,7 +117,7 @@ var NetPorts = L.Class.extend({
 					if (speed > 0)
 						statusText.innerHTML = speed + '&nbsp;' + _('Mbit/s');
 					else
-						statusText.innerHTML = _('Connected&#8201;');
+						statusText.innerHTML = _('Connected', 'Link status');
 
 					if (portData.duplex === "full")
 						statusText.innerHTML += ',<br />' + _('full-duplex');
@@ -134,14 +126,14 @@ var NetPorts = L.Class.extend({
 				}
 				else
 				{
-					statusText.appendChild(E('span', { class: "netports-linkstatus-text-disconnected" }, _('Disconnected&#8201;')));
+					statusText.appendChild(E('span', { class: "netports-linkstatus-text-disconnected" }, _('Disconnected', 'Link status')));
 					statusText.appendChild(E('br', {}));
 					statusText.appendChild(document.createTextNode('\u00a0')); /* &nbsp; */
 				}
 			}
 			else
 			{
-				statusText.appendChild(E('span', { class: "netports-linkstatus-text-disabled" }, _('Disabled&#8201;')));
+				statusText.appendChild(E('span', { class: "netports-linkstatus-text-disabled" }, _('Disabled', 'Link status')));
 				statusText.appendChild(E('br', {}));
 				statusText.appendChild(document.createTextNode('\u00a0')); /* &nbsp; */
 			}
