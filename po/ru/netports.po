@@ -11,101 +11,104 @@ msgstr ""
 "Language: ru\n"
 "X-Generator: Poedit 2.2\n"
 
-#: htdocs/luci-static/resources/netports/netports.js:229
-#: htdocs/luci-static/resources/netports/netports.js:242
+#: htdocs/luci-static/resources/netports.js:222
+#: htdocs/luci-static/resources/netports.js:235
 msgid "%.2mB"
 msgstr "%.2mБ"
 
-#: htdocs/luci-static/resources/netports/netports.js:255
+#: htdocs/luci-static/resources/netports.js:248
 msgid "Bridge member"
 msgstr "В составе моста"
 
-#: htdocs/luci-static/resources/netports/netports.js:371
+#: htdocs/luci-static/resources/netports.js:363
 msgid "Collecting data..."
 msgstr "Сбор данных..."
 
-#: htdocs/luci-static/resources/netports/netports.js:124
-msgid "Connected&#8201;"
+#: htdocs/luci-static/resources/netports.js:120
+msgctxt "Link status"
+msgid "Connected"
 msgstr "Подключено"
 
-#: htdocs/luci-static/resources/netports/netports.js:140
-msgid "Disabled&#8201;"
+#: htdocs/luci-static/resources/netports.js:136
+msgctxt "Link status"
+msgid "Disabled"
 msgstr "Отключено"
 
-#: htdocs/luci-static/resources/netports/netports.js:133
-msgid "Disconnected&#8201;"
+#: htdocs/luci-static/resources/netports.js:129
+msgctxt "Link status"
+msgid "Disconnected"
 msgstr "Не подключено"
 
-#: htdocs/luci-static/resources/netports/netports.js:256
+#: htdocs/luci-static/resources/netports.js:249
 msgid "Firewall zones"
 msgstr "Зоны межсетевого экрана"
 
-#: htdocs/luci-static/resources/netports/netports.js:254
+#: htdocs/luci-static/resources/netports.js:247
 msgid "Interface"
 msgstr "Интерфейс"
 
-#: htdocs/luci-static/resources/netports/netports.js:253
+#: htdocs/luci-static/resources/netports.js:246
 msgid "Link status"
 msgstr "Состояние подключения"
 
-#: htdocs/luci-static/resources/netports/netports.js:259
+#: htdocs/luci-static/resources/netports.js:252
 msgid "MAC-address"
 msgstr "MAC-адрес"
 
-#: htdocs/luci-static/resources/netports/netports.js:122
+#: htdocs/luci-static/resources/netports.js:118
 msgid "Mbit/s"
 msgstr "Мбит/с"
 
-#: htdocs/luci-static/resources/netports/netports.js:252
+#: htdocs/luci-static/resources/netports.js:245
 msgid "Name and MAC-address"
 msgstr "Имя и MAC-адрес"
 
-#: htdocs/luci-static/resources/netports/netports.js:357
+#: htdocs/luci-static/resources/view/status/include/25_netports.js:48
 msgid "Network Interfaces Ports Status"
 msgstr "Состояние портов сетевых интерфейсов"
 
-#: htdocs/luci-static/resources/netports/netports.js:538
+#: htdocs/luci-static/resources/netports.js:585
 msgid "No data to display"
 msgstr "Нет данных для отображения"
 
-#: htdocs/luci-static/resources/netports/netports.js:257
+#: htdocs/luci-static/resources/netports.js:250
 msgid "RX"
 msgstr "Получение (RX)"
 
-#: htdocs/luci-static/resources/netports/netports.js:258
+#: htdocs/luci-static/resources/netports.js:251
 msgid "TX"
 msgstr "Передача (TX)"
 
-#: htdocs/luci-static/resources/netports/netports.js:313
+#: htdocs/luci-static/resources/netports.js:306
 msgid "Toggle additional information"
 msgstr "Показать/скрыть дополнительную информацию"
 
-#: htdocs/luci-static/resources/netports/netports.js:326
-#: htdocs/luci-static/resources/netports/netports.js:423
+#: htdocs/luci-static/resources/netports.js:319
+#: htdocs/luci-static/resources/netports.js:418
 msgid "Toggle view mode"
 msgstr "Переключить режим отображения"
 
-#: htdocs/luci-static/resources/netports/netports.js:414
+#: htdocs/luci-static/resources/netports.js:409
 msgid "Too many ports for horizontal display mode"
 msgstr "Слишком много портов для горизонтального режима отображения"
 
-#: htdocs/luci-static/resources/netports/netports.js:127
+#: htdocs/luci-static/resources/netports.js:123
 msgid "full-duplex"
 msgstr "полный дуплекс"
 
-#: htdocs/luci-static/resources/netports/netports.js:129
+#: htdocs/luci-static/resources/netports.js:125
 msgid "half-duplex"
 msgstr "полу-дуплекс"
 
-#: htdocs/luci-static/resources/netports/netports.js:217
+#: htdocs/luci-static/resources/netports.js:210
 msgid "none"
 msgstr "нет"
 
-#: htdocs/luci-static/resources/netports/netports.js:231
-#: htdocs/luci-static/resources/netports/netports.js:244
+#: htdocs/luci-static/resources/netports.js:224
+#: htdocs/luci-static/resources/netports.js:237
 msgid "pkts."
 msgstr "пакетов"
 
-#: htdocs/luci-static/resources/netports/netports.js:180
+#: htdocs/luci-static/resources/netports.js:173
 msgid "port&nbsp;%d"
 msgstr "порт&nbsp;%d"
