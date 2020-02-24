@@ -6,6 +6,7 @@
 'use strict';
 'require ui';
 'require uci';
+'require firewall';
 
 const NetPortsMode = {
 	H: 0,
@@ -198,7 +199,7 @@ var NetPorts = L.Class.extend({
 				var ifname = '';
 
 				z += '<div class="ifacebox netports-ifacebox">';
-				z += '<div class="ifacebox-head netports-ifacebox-head" style="background-color: ' + n.fwzone_color + ';">';
+				z += '<div class="ifacebox-head netports-ifacebox-head" style="background-color: ' + firewall.getColorForName(n.netname) + ';">';
 
 				if (out_ifname)
 					ifname = n.netname.toUpperCase() + ': ';

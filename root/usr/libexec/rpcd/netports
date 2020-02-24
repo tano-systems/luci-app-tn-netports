@@ -124,10 +124,7 @@ local methods = {
 					l[name]["wifiname"] = wifiname
 					if fwzone then
 						l[name]["fwzone"]       = fwzone:name()
-						l[name]["fwzone_color"] = fwzone:get_color()
 						l[name]["fwzone_sid"]   = fwzone.sid
-					else
-						l[name]["fwzone_color"] = "#EEEEEE"
 					end
 				end
 			end

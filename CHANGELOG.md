@@ -11,6 +11,10 @@ All dates in this document are in `DD.MM.YYYY` format.
 ### Changed
 - Added translation contexts for some strings.
 
+### Fixed
+- Synchronized colors of the firewall zones with colors from the
+  network/firewall settings.
+
 ## [Version 2.0.2] (20.01.2020)
 
 ### Fixed
