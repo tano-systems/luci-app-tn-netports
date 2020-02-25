@@ -110,5 +110,5 @@ msgid "pkts."
 msgstr "пакетов"
 
 #: htdocs/luci-static/resources/netports.js:173
-msgid "port&nbsp;%d"
-msgstr "порт&nbsp;%d"
+msgid "port&#160;%d"
+msgstr "порт&#160;%d"

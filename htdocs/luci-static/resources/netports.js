@@ -116,7 +116,7 @@ var NetPorts = L.Class.extend({
 					var speed = parseInt(portData.speed);
 
 					if (speed > 0)
-						statusText.innerHTML = speed + '&nbsp;' + _('Mbit/s');
+						statusText.innerHTML = speed + '\u00a0' + _('Mbit/s');
 					else
 						statusText.innerHTML = _('Connected', 'Link status');
 
@@ -171,7 +171,7 @@ var NetPorts = L.Class.extend({
 					v += ' (<a href="/cgi-bin/luci/admin/network/network">'
 						+ portData.ntm_bridge.netname.toUpperCase() + '</a>)';
 
-				v += ',<br />' + _('port&nbsp;%d').format(portData.bridge.port);
+				v += ',<br />' + _('port&#160;%d').format(portData.bridge.port);
 
 				return v;
 			}
