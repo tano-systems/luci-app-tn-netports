@@ -199,7 +199,7 @@ var NetPorts = L.Class.extend({
 				var ifname = '';
 
 				z += '<div class="ifacebox netports-ifacebox">';
-				z += '<div class="ifacebox-head netports-ifacebox-head" style="background-color: ' + firewall.getColorForName(n.netname) + ';">';
+				z += '<div class="ifacebox-head netports-ifacebox-head" style="background-color: ' + firewall.getColorForName(n.fwzone) + ';">';
 
 				if (out_ifname)
 					ifname = n.netname.toUpperCase() + ': ';
