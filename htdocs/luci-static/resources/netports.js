@@ -220,7 +220,7 @@ var NetPorts = L.Class.extend({
 			if (portData.stats.tx_bytes)
 			{
 				return [
-					_('%.2mB').format(portData.stats.tx_bytes),
+					_('%1024.2mB').format(portData.stats.tx_bytes),
 					E('br', {}),
 					'(%d\u00a0%s)'.format(portData.stats.tx_packets, _('pkts.'))
 				];
@@ -233,7 +233,7 @@ var NetPorts = L.Class.extend({
 			if (portData.stats.rx_bytes)
 			{
 				return [
-					_('%.2mB').format(portData.stats.rx_bytes),
+					_('%1024.2mB').format(portData.stats.rx_bytes),
 					E('br', {}),
 					'(%d\u00a0%s)'.format(portData.stats.rx_packets, _('pkts.'))
 				];

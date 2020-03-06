@@ -10,6 +10,8 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ### Changed
 - Added translation contexts for some strings.
+- Use perfixes to indicate binary multiples for Rx and Tx bytes
+  from IEEE 1541-2002.
 
 ### Fixed
 - Synchronized colors of the firewall zones with colors from the
