@@ -65,11 +65,14 @@ var NetPorts = L.Class.extend({
 		var currentData = null;
 
 		var fmtNameAndMAC = function(portData) {
-			return [
-				E('strong', {}, portData.name),
-				E('br', {}),
-				fmtMAC(portData)
-			]
+			var elements = [ E('strong', {}, portData.name) ];
+
+			if (portData.hwaddr) {
+				elements.push(E('br', {}));
+				elements.push(fmtMAC(portData));
+			}
+
+			return elements;
 		}
 
 		var fmtMAC = function(portData) {

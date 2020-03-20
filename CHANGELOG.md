@@ -17,6 +17,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 - Synchronized colors of the firewall zones with colors from the
   network/firewall settings.
 - Fixed nbsp entity output for XML (luci-theme-openwrt).
+- Fixed markup for interfaces without MAC address (e.g. PPP connections).
 
 ## [Version 2.0.2] (20.01.2020)
 
