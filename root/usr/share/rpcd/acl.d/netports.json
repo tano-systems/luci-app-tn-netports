@@ -1,6 +1,6 @@
 {
-	"netports": {
-		"description": "Grant access for luci-app-netports",
+	"luci-app-tn-netports": {
+		"description": "Grant access to network ports status information",
 		"read": {
 			"ubus": {
 				"netports": [ "getPortsInfo" ]
