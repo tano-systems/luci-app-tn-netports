@@ -1,55 +1,59 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
-#: htdocs/luci-static/resources/netports.js:222
-#: htdocs/luci-static/resources/netports.js:235
-msgid "%.2mB"
+#: htdocs/luci-static/resources/netports.js:223
+#: htdocs/luci-static/resources/netports.js:236
+msgid "%1024.2mB"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:248
+#: htdocs/luci-static/resources/netports.js:249
 msgid "Bridge member"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:363
+#: htdocs/luci-static/resources/netports.js:364
 msgid "Collecting data..."
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:120
+#: htdocs/luci-static/resources/netports.js:121
 msgctxt "Link status"
 msgid "Connected"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:136
+#: htdocs/luci-static/resources/netports.js:137
 msgctxt "Link status"
 msgid "Disabled"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:129
+#: htdocs/luci-static/resources/netports.js:130
 msgctxt "Link status"
 msgid "Disconnected"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:249
+#: htdocs/luci-static/resources/netports.js:250
 msgid "Firewall zones"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:247
+#: root/usr/share/rpcd/acl.d/netports.json:3
+msgid "Grant access to network ports status information"
+msgstr ""
+
+#: htdocs/luci-static/resources/netports.js:248
 msgid "Interface"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:246
+#: htdocs/luci-static/resources/netports.js:247
 msgid "Link status"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:252
+#: htdocs/luci-static/resources/netports.js:253
 msgid "MAC-address"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:118
+#: htdocs/luci-static/resources/netports.js:119
 msgid "Mbit/s"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:245
+#: htdocs/luci-static/resources/netports.js:246
 msgid "Name and MAC-address"
 msgstr ""
 
@@ -57,48 +61,48 @@ msgstr ""
 msgid "Network Interfaces Ports Status"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:585
+#: htdocs/luci-static/resources/netports.js:586
 msgid "No data to display"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:250
+#: htdocs/luci-static/resources/netports.js:251
 msgid "RX"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:251
+#: htdocs/luci-static/resources/netports.js:252
 msgid "TX"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:306
+#: htdocs/luci-static/resources/netports.js:307
 msgid "Toggle additional information"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:319
-#: htdocs/luci-static/resources/netports.js:418
+#: htdocs/luci-static/resources/netports.js:320
+#: htdocs/luci-static/resources/netports.js:419
 msgid "Toggle view mode"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:409
+#: htdocs/luci-static/resources/netports.js:410
 msgid "Too many ports for horizontal display mode"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:123
+#: htdocs/luci-static/resources/netports.js:124
 msgid "full-duplex"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:125
+#: htdocs/luci-static/resources/netports.js:126
 msgid "half-duplex"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:210
+#: htdocs/luci-static/resources/netports.js:211
 msgid "none"
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:224
-#: htdocs/luci-static/resources/netports.js:237
+#: htdocs/luci-static/resources/netports.js:225
+#: htdocs/luci-static/resources/netports.js:238
 msgid "pkts."
 msgstr ""
 
-#: htdocs/luci-static/resources/netports.js:173
+#: htdocs/luci-static/resources/netports.js:174
 msgid "port&#160;%d"
 msgstr ""
