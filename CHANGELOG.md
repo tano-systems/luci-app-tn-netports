@@ -14,6 +14,7 @@ All dates in this document are in `DD.MM.YYYY` format.
   from IEEE 1541-2002.
 
 ### Fixed
+- Do not show the table on insufficient permissions.
 - Synchronized colors of the firewall zones with colors from the
   network/firewall settings.
 - Fixed nbsp entity output for XML (luci-theme-openwrt).

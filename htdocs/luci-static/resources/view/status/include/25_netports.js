@@ -8,6 +8,13 @@
 'require uci';
 'require netports';
 
+var callSessionAccess = rpc.declare({
+	object: 'session',
+	method: 'access',
+	params: [ 'scope', 'object', 'function' ],
+	expect: { 'access': false }
+});
+
 var callNetPortsGetInfo = rpc.declare({
 	object: 'netports',
 	method: 'getPortsInfo',
@@ -49,15 +56,20 @@ return L.Class.extend({
 
 	load: function() {
 		return Promise.all([
-			L.resolveDefault(callNetPortsGetInfo(), {})
+			L.resolveDefault(callNetPortsGetInfo(), {}),
+			callSessionAccess('access-group', 'luci-app-tn-netports', 'read'),
 		]);
 	},
 
 	render: function(data) {
+		var hasReadPermission = data[1];
+
+		if (!hasReadPermission)
+			return E([]);
+
 		if (netports_object)
 			netports_object.updateData(data[0]);
-		return E([
-			netports_el
-		]);
+
+		return E([ netports_el ]);
 	}
 });
