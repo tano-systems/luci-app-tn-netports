@@ -6,7 +6,7 @@ This package allows you to monitor current state of the network interfaces speci
 ## Dependencies
 This LuCI application developed for LuCI master branch. Application requires luabitop package to be installed.
 
-Master branch of this repository requires index status page client side view implementation in the LuCI (see commit https://github.com/openwrt/luci/commit/c85af3d7618b55c499ce4bf58e3896068bd413ae). Support for older LuCI releases (e.g. for version 18.06.x) is left in the [1.x](https://github.com/tano-systems/luci-app-tn-netports/tree/1.x) branch of this repository.
+Master branch of this repository requires index status page client side view implementation in the LuCI (see commit https://github.com/openwrt/luci/commit/c85af3d7618b55c499ce4bf58e3896068bd413ae). Support for older LuCI releases (e.g. for version 18.06.x) is left in the [v1.x](https://github.com/tano-systems/luci-app-tn-netports/tree/v1.x) branch of this repository.
 
 ## Supported languages
 - English
