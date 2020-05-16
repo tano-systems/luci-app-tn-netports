@@ -70,6 +70,7 @@
 	padding: 0 10px;
 	display: inline-flex;
 	background: linear-gradient(#fff, #fff 25%, #e6e6e6) no-repeat;
+	box-shadow: 0 1px 3px 0 grey;
 }
 .netports-buttons button:disabled {
 	opacity: 0.6;
