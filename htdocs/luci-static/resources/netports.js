@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019, Tano Systems. All Rights Reserved.
+ * Copyright (c) 2019-2020 Tano Systems LLC. All Rights Reserved.
  * Anton Kikin <a.kikin@tano-systems.com>
  */
 
@@ -13,7 +13,7 @@ const NetPortsMode = {
 	V: 1
 };
 
-const NetPortsVersion = "2.0.2"
+const NetPortsVersion = "2.0.3"
 
 const svgModeSwitch = 
 	'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">' +

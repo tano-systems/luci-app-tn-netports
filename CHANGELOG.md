@@ -8,9 +8,13 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
 
+*Nothing yet*
+
+## [Version 2.0.3]
+
 ### Changed
 - Added translation contexts for some strings.
-- Use perfixes to indicate binary multiples for Rx and Tx bytes
+- Use prefixes to indicate binary multiples for Rx and Tx bytes
   from IEEE 1541-2002.
 
 ### Fixed
@@ -19,6 +23,7 @@ All dates in this document are in `DD.MM.YYYY` format.
   network/firewall settings.
 - Fixed nbsp entity output for XML (luci-theme-openwrt).
 - Fixed markup for interfaces without MAC address (e.g. PPP connections).
+- Fixed IE11 compatibility.
 
 ## [Version 2.0.2] (20.01.2020)
 
@@ -98,6 +103,7 @@ All dates in this document are in `DD.MM.YYYY` format.
 Initial release
 
 [Unreleased]: https://github.com/tano-systems/luci-app-netports/tree/master
+[Version 2.0.3]: https://github.com/tano-systems/luci-app-netports/releases/tag/v2.0.3
 [Version 2.0.2]: https://github.com/tano-systems/luci-app-netports/releases/tag/v2.0.2
 [Version 2.0.1]: https://github.com/tano-systems/luci-app-netports/releases/tag/v2.0.1
 [Version 2.0.0]: https://github.com/tano-systems/luci-app-netports/releases/tag/v2.0.0
