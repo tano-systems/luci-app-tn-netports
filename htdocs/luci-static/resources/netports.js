@@ -360,7 +360,7 @@ var NetPorts = L.Class.extend({
 
 			var table = E('div', { class: 'table netports-table' }, [
 				E('div', { class: 'tr table-titles' },
-					E('div', { class: 'th top center' }, '...'),
+					E('div', { class: 'th top center' }, '...')
 				),
 				E('div', { class: 'tr placeholder' },
 					E('div', { class: 'td' },
