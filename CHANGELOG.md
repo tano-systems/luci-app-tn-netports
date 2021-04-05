@@ -8,7 +8,8 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
 
-*Nothing yet*
+### Added
+- Added 'sfp' port type with icon
 
 ## [Version 2.0.3]
 

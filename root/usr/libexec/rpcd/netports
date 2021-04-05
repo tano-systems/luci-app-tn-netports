@@ -161,7 +161,8 @@ local methods = {
 						"vpn",
 						"tunnel",
 						"ppp",
-						"gprs"
+						"gprs",
+						"sfp"
 					}
 
 					if not util.contains(knowntypes, type) then
