@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="48" height="38" version="1.1" viewBox="0 0 12.7 10.054" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <defs>
-<filter id="b" color-interpolation-filters="sRGB">
-<feColorMatrix result="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
-<feColorMatrix in="fbSourceGraphic" result="fbSourceGraphicAlpha" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"/>
-<feColorMatrix in="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
-</filter>
-<filter id="e" color-interpolation-filters="sRGB">
-<feColorMatrix result="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
-<feColorMatrix in="fbSourceGraphic" result="fbSourceGraphicAlpha" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"/>
-<feColorMatrix in="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
-</filter>
 <filter id="a" color-interpolation-filters="sRGB">
+<feColorMatrix result="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
+<feColorMatrix in="fbSourceGraphic" result="fbSourceGraphicAlpha" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"/>
+<feColorMatrix in="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
+</filter>
+<filter id="c" color-interpolation-filters="sRGB">
 <feColorMatrix result="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
 <feColorMatrix in="fbSourceGraphic" result="fbSourceGraphicAlpha" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"/>
 <feColorMatrix in="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
@@ -21,10 +16,21 @@
 <feColorMatrix in="fbSourceGraphic" result="fbSourceGraphicAlpha" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"/>
 <feColorMatrix in="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
 </filter>
-<filter id="c" color-interpolation-filters="sRGB">
-<feColorMatrix result="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
+<filter id="b" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">
+<feComponentTransfer in="blur" result="fbSourceGraphic">
+<feFuncR type="gamma"/>
+<feFuncG type="gamma"/>
+<feFuncB type="gamma"/>
+<feFuncA type="identity"/>
+</feComponentTransfer>
 <feColorMatrix in="fbSourceGraphic" result="fbSourceGraphicAlpha" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"/>
-<feColorMatrix in="fbSourceGraphic" values="2 -0.5 -0.5 0 0 -0.5 2 -0.5 0 0 -0.5 -0.5 2 0 0 0 0 0 1 0 "/>
+<feComposite in="fbSourceGraphic" in2="fbSourceGraphic" k1="0.69999999999999996" operator="arithmetic" result="composite1"/>
+<feColorMatrix in="composite1" result="colormatrix1" type="saturate" values="0"/>
+<feFlood flood-color="rgb(255,255,255)" result="flood1"/>
+<feBlend in="flood1" in2="colormatrix1" mode="multiply" result="blend1"/>
+<feBlend in2="blend1" mode="screen" result="blend2"/>
+<feColorMatrix in="blend2" result="colormatrix2" type="saturate" values="1"/>
+<feComposite in="colormatrix2" in2="fbSourceGraphic" k2="1" operator="in" result="composite2"/>
 </filter>
 </defs>
 <metadata>
@@ -36,23 +42,29 @@
 </cc:Work>
 </rdf:RDF>
 </metadata>
-<g transform="translate(0 .081556)">
-<rect x=".23201" y=".69137" width="12.236" height="8.5083" ry=".2835" fill="#e6e6e6" stroke="#e6e6e6" stroke-linecap="round" stroke-linejoin="round" stroke-width=".34762" style="paint-order:normal"/>
-<path transform="matrix(.11105 0 0 .097 -6.8281 -5.9243)" d="m167.53 75.649 2.8e-4 56.831h-25.815v10.105h-46.456v-10.105h-25.472l-3.4e-4 -56.831c34.664-0.03081 67.47 0.08096 97.743 0z" fill="#9b9b9b" filter="url(#b)" stroke="#9b9b9b" stroke-linecap="square" stroke-width="2.5"/>
-<rect x="2.1544" y="3.6359" width="8.3912" height="2.3096" ry=".032672" fill="#b8b8b8" stroke="#b8b8b8" stroke-linecap="round" stroke-width=".65396" style="paint-order:normal"/>
-<path transform="matrix(.91472 0 0 .02993 -69.123 4.5477)" d="m80.556 75.747h3.9062v22.786h-3.9062z" fill="#e6e6e6" filter="url(#e)" stroke="#e6e6e6" stroke-linecap="square"/>
-<rect x=".90785" y="7.6921" width="2.0554" height=".94296" ry=".073812" fill="#c7c7c7" stroke="#c7c7c7" stroke-linecap="round" stroke-width=".20681" style="paint-order:normal"/>
-<g transform="matrix(.85418 0 0 .78314 1.417 .94606)" fill="#fff" stroke="#fff" stroke-linecap="square">
-<path transform="matrix(.098669 0 0 .051926 -5.3729 1.1201)" d="m80.556 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
-<path transform="matrix(.098669 0 0 .051926 -6.5662 1.1201)" d="m153.6 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
-<path transform="matrix(.098669 0 0 .051926 -6.2252 1.1201)" d="m132.73 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
-<path transform="matrix(.098669 0 0 .051926 -6.0552 1.1201)" d="m122.3 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
-<path transform="matrix(.098669 0 0 .051926 -5.8843 1.1201)" d="m111.86 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
-<path transform="matrix(.098669 0 0 .051926 -5.7143 1.1201)" d="m101.43 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
-<path transform="matrix(.098669 0 0 .051926 -5.5434 1.1201)" d="m90.991 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
-<path transform="matrix(.098669 0 0 .051926 -6.3962 1.1201)" d="m143.17 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
-<path transform="matrix(.098669 0 0 .051926 -5.7071 1.1043)" d="m153.6 75.747h3.9062v22.786h-3.9062z" filter="url(#d)"/>
-<path transform="matrix(.098669 0 0 .051926 -13.439 1.1201)" d="m153.6 75.747h3.9062v22.786h-3.9062z" filter="url(#c)"/>
+<g transform="translate(-22.681 -15.411)">
+<g transform="translate(-8.4724 -1.0835)" filter="url(#b)">
+<rect x="31.154" y="16.58" width="12.348" height="8.0475" ry=".19582" fill="#ccc" stroke="#e6e6e6" stroke-linecap="round" stroke-linejoin="round" stroke-width=".35277" style="paint-order:normal"/>
+<path d="m35.388 16.58h3.8128c0.02165 0 0.02888 0.01452 0.03908 0.02721l0.48652 0.60543c0.01022 0.0127-0.01743 0.02721-0.03908 0.02721h-4.7183c-0.02165 0-0.04822-0.01401-0.03908-0.02721l0.41895-0.60543c0.0092-0.0132 0.01743-0.02721 0.03908-0.02721z" fill="#808080"/>
+<g transform="matrix(1.0425 0 0 1.0425 21.522 -11.305)">
+<rect x="9.8397" y="27.271" width="10.682" height="6.6104" ry=".16085" fill="#808080" stroke="#e6e6e6" stroke-linecap="round" stroke-linejoin="round" stroke-width=".29737" style="paint-order:normal"/>
+<rect x="10.625" y="31.992" width="2.3348" height="1.2478" ry=".068975" fill="#737373" stroke="#737373" stroke-linecap="round" stroke-width=".025867" style="paint-order:normal"/>
+<rect x="17.364" y="31.992" width="2.3348" height="1.2478" ry=".068975" fill="#737373" stroke="#737373" stroke-linecap="round" stroke-width=".025867" style="paint-order:normal"/>
+<rect x="10.647" y="27.708" width="9.0303" height="2.3501" ry=".12991" fill="#737373" stroke="#737373" stroke-linecap="round" stroke-width=".069815" style="paint-order:normal"/>
+<g transform="matrix(1.1386 0 0 1.0579 8.6357 17.891)" fill="#5f5720">
+<path transform="matrix(.084281 0 0 .040665 -3.6314 6.3703)" d="m80.556 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
+<path transform="matrix(.084281 0 0 .040665 -4.9689 6.3703)" d="m153.6 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
+<path transform="matrix(.084281 0 0 .040665 -4.5868 6.3703)" d="m132.73 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
+<path transform="matrix(.084281 0 0 .040665 -4.3961 6.3703)" d="m122.3 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
+<path transform="matrix(.084281 0 0 .040665 -4.2046 6.3703)" d="m111.86 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
+<path transform="matrix(.084281 0 0 .040665 -4.0139 6.3703)" d="m101.43 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
+<path transform="matrix(.084281 0 0 .040665 -3.8225 6.3703)" d="m90.991 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
+<path transform="matrix(.084281 0 0 .040665 -4.7783 6.3703)" d="m143.17 75.747h3.9062v22.786h-3.9062z" filter="url(#a)"/>
+<path transform="matrix(.084281 0 0 .040665 -4.2806 6.3703)" d="m153.6 75.747h3.9062v22.786h-3.9062z" filter="url(#c)"/>
+<path transform="matrix(.084281 0 0 .040665 -10.476 6.3703)" d="m153.6 75.747h3.9062v22.786h-3.9062z" filter="url(#d)"/>
+</g>
+</g>
+<path d="m35.921 16.494h2.7367c0.01742 0 0.02022 0.01954 0.03142 0.0348l0.56803 0.7742c0.01125 0.01533-0.01401 0.0348-0.03142 0.0348h-3.7947c-0.01742 0-0.03801-0.01689-0.03142-0.0348l0.48995-0.7742 0.03142-0.0348z" fill="#ccc"/>
 </g>
 </g>
 </svg>
