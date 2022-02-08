@@ -115,7 +115,7 @@ local methods = {
 					local fwzone = fwm:get_zone_by_network(net:name())
 					local l = netlist
 
-					if iface:is_bridge() then
+					if not net:is_alias() and iface:is_bridge() then
 						l = brlist
 					end
 

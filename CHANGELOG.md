@@ -8,6 +8,9 @@ All dates in this document are in `DD.MM.YYYY` format.
 
 ## [Unreleased]
 
+### Fixed
+- Proper handle aliases when searching network name for bridges
+
 ### Added
 - Added 'sfp' port type with icon
 
